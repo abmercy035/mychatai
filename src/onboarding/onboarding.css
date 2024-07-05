@@ -1,0 +1,149 @@
+.onboard_layout_wrapper {
+    display: flex;
+    background-color: aliceblue;
+    height: 100%;
+}
+
+.onboard_layout_left_screen {
+    width: 40%;
+    background: url(../assets/ai-icon.svg);
+    background-color: #030303;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.onboard_layout_right_screen,
+.onboard_layout_left_screen {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.onboard_layout_right_screen {
+    width: 60%;
+    background-color: #363636;
+}
+
+.onboard_layout_right_form_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    max-width: 700px;
+    gap: 30px;
+}
+
+.layout_app_title {
+    font-size: 50px;
+    color: #fff;
+
+}
+
+.onboard_layout_right_screen_form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.login_form_wrapper {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.form_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.form_group {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 5px;
+}
+
+.form_group label {
+    color: white;
+}
+
+.form_group input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    width: 90%;
+}
+
+.form_bottom {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.form_other_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.switch_form,
+.reset_pass {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.switch_form {
+    color: #ed740d;
+}
+
+.reset_pass {
+    color: white;
+}
+
+.form_submit_btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ed740d;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 767px) {
+    .onboard_layout_left_screen {
+        display: none;
+    }
+
+    .onboard_layout_right_screen {
+        width: 100%;
+    }
+}
