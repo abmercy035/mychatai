@@ -64,8 +64,8 @@ export default function MainChat() {
                 <div className="modal-content">
                     <p>You need to be logged in to send a message.</p>
                     <div className="modal-action-btn">
-                        {["", "Signup"].map((text, index) =>
-                            <button key={index} onClick={() => navigate(`/${text}`)} dangerouslySetInnerHTML={{ __html: text }} />)}
+                        <button onClick={() => navigate("/")}>Login</button>
+                        <button onClick={() => navigate("Signup")}>Signup</button>
                     </div>
                 </div>
             </div>}
