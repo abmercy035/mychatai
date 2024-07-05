@@ -202,7 +202,7 @@
     }
 
     .user_name {
-        /* display: none; */
+        display: none;
     }
 
     .layout_header_right {
