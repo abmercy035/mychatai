@@ -15,7 +15,7 @@ export default function Signup() {
     }
     const signupForm = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3001/auth/signup', {
+        fetch('https://mychatai-be.onrender.com/auth/signup', {
             ...headerOpt,
             body: JSON.stringify({
                 username: e.target[0].value,

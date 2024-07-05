@@ -13,7 +13,7 @@ export default function Login() {
     }
     const loginForm = (e) => {
         e.preventDefault()
-        fetch('http://localhost:3001/auth/login', {
+        fetch('https://mychatai-be.onrender.com/auth/login', {
             ...headerOpt,
             body: JSON.stringify({
                 username: e.target[0].value,
