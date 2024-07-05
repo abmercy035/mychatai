@@ -54,7 +54,7 @@ export default function Signup() {
         </div>
         <div className="form_bottom">
             <div className="form_other_actions">
-                <span className="switch_form" onClick={() => navigate('/login')}>Login an account</span>
+                <span className="switch_form" onClick={() => navigate('/')}>Login an account</span>
                 <span className="reset_pass" onClick={Guest}>Continue as Guest</span>
             </div>
             <button className="form_submit_btn" type="submit">Create account</button>
