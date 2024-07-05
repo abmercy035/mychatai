@@ -20,6 +20,9 @@
     height: 60px;
 }
 
+
+
+
 .layout_header_left {
     display: flex;
     align-items: baseline;
@@ -65,6 +68,31 @@
     border-radius: 3px;
     font-size: 12px;
     cursor: pointer;
+}
+
+@media screen and (max-width : 440px) {
+    .app_name {
+        background-color: transparent;
+        color: #030303;
+    }
+
+    .user_name {
+        /* display: none; */
+    }
+
+    .layout_header_right {
+        gap: 5px;
+        background-color: transparent;
+        min-width: 130px;
+    }
+
+    .header_btn {
+        background-color: #030303;
+        padding: 10px;
+        font-size: 12px;
+        color: white;
+    }
+
 }
 
 .chat_layout_body {
