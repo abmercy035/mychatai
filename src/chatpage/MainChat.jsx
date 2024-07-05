@@ -65,7 +65,7 @@ export default function MainChat() {
                     <p>You need to be logged in to send a message.</p>
                     <div className="modal-action-btn">
                         <button onClick={() => navigate("/")}>Login</button>
-                        <button onClick={() => navigate("Signup")}>Signup</button>
+                        <button onClick={() => navigate("/Signup")}>Signup</button>
                     </div>
                 </div>
             </div>}
