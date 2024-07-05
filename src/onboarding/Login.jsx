@@ -22,6 +22,7 @@ export default function Login() {
         }
         ).then(res => res.json()
         ).then(({ status, username, error }) => {
+            console.log(username)
             if (status === 200) {
                 setUsername(username)
                 navigate("/chat")

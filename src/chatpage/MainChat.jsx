@@ -20,7 +20,7 @@ export default function MainChat() {
                 left: 100,
                 behavior: "smooth",
             });
-            fetch('http://localhost:3001/chat', {
+            fetch('https://mychatai-be.onrender.com/chat', {
                 ...headerOpt,
                 body: JSON.stringify({
                     newMessage: e.target[0].value,
