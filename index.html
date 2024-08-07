@@ -1,13 +1,1818 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pump connect</title>
+	<link rel="stylesheet" href="./style.css">
+
+	<style>
+		#nprogress {
+			pointer-events: none
+		}
+
+		#nprogress .bar {
+			background: white;
+			position: fixed;
+			z-index: 1600;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 3px
+		}
+
+		#nprogress .peg {
+			display: block;
+			position: absolute;
+			right: 0;
+			width: 100px;
+			height: 100%;
+			box-shadow: 0 0 10px white, 0 0 5px white;
+			opacity: 1;
+			-webkit-transform: rotate(3deg) translate(0px, -4px);
+			-ms-transform: rotate(3deg) translate(0px, -4px);
+			transform: rotate(3deg) translate(0px, -4px)
+		}
+
+		#nprogress .spinner {
+			display: block;
+			position: fixed;
+			z-index: 1600;
+			top: 15px;
+			right: 15px
+		}
+
+		#nprogress .spinner-icon {
+			width: 18px;
+			height: 18px;
+			box-sizing: border-box;
+			border: 2px solid transparent;
+			border-top-color: white;
+			border-left-color: white;
+			border-radius: 50%;
+			-webkit-animation: nprogress-spinner 400ms linear infinite;
+			animation: nprogress-spinner 400ms linear infinite
+		}
+
+		.nprogress-custom-parent {
+			overflow: hidden;
+			position: relative
+		}
+
+		.nprogress-custom-parent #nprogress .bar,
+		.nprogress-custom-parent #nprogress .spinner {
+			position: absolute
+		}
+
+		@-webkit-keyframes nprogress-spinner {
+			0% {
+				-webkit-transform: rotate(0deg)
+			}
+
+			100% {
+				-webkit-transform: rotate(360deg)
+			}
+		}
+
+		@keyframes nprogress-spinner {
+			0% {
+				transform: rotate(0deg)
+			}
+
+			100% {
+				transform: rotate(360deg)
+			}
+		}
+	</style>
+</head>
+
+<body class="__className_aaf875 bg-primary">
+	<div class=" site-wrapper">
+		<header>
+			<div>
+				<nav class="flex flex-wrap justify-between w-full p-2 items-start h-fit">
+					<div class="flex gap-2 items-center">
+						<a href="/board">
+							<img alt="Pump" loading="lazy" width="25" height="25" decoding="async" data-nimg="1"
+								 class="mr-4" style="width:25px;height:25px;" srcset="
+									https://pump.fun/_next/image?url=logo.png&w=32&q=75 1x,
+									https://pump.fun/_next/image?url=logo.png&w=64&q=75 2x"
+								 src="https://pump.fun/_next/image?url=logo.png&w=64&q=75"></a>
+						<div class="grid h-fit">
+							<div class="flex gap-2"><a class="text-sm text-white hover:underline hover:font-bold"
+								   href="https://twitter.com/pumpdotfun" target="_blank"
+								   rel="noopener noreferrer">[twitter]</a><a
+								   class="text-sm text-white hover:underline hover:font-bold"
+								   href="https://t.me/pumpfunsupport" target="_blank"
+								   rel="noopener noreferrer">[support]</a></div>
+							<div class="flex gap-2"><a class="text-sm text-white hover:underline hover:font-bold"
+								   href="https://t.me/launchonpump" target="_blank"
+								   rel="noopener noreferrer">[telegram]</a><button
+										class="text-sm text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50"
+										type="button" aria-haspopup="dialog" aria-expanded="false"
+										aria-controls="radix-:r0:" data-state="closed">[how it works]</button></div>
+						</div>
+						<div class=" md:flex gap-2">
+							<div class="p-2 rounded flex items-center gap-1 text-sm bg-red-300 animate-shake"><a
+								   href="/profile/5G9ojzyLRjefgoP3vvt6sFiSTPn7jHPpzBSVaGnmuzHS"><span
+										  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+											 height="16" decoding="async" data-nimg="1" class="rounded w-4 h-4"
+											 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+											 style="color: transparent; display: block;"><span
+											  class="px-1 rounded hover:underline flex gap-1"
+											  style="background-color: transparent;">5G9ojz </span></span></a>sold
+								0.2035 SOL of<a class="hover:underline flex gap-2"
+								   href="/F6D6T1Akfaut8Gu4qKAvec1q2aj7gR5txe1sDZa3Uihj">HAROLD<img alt="" loading="lazy"
+										 width="20" height="20" decoding="async" data-nimg="1"
+										 class="h-5 w-5 rounded-full"
+										 src="https://pump.mypinata.cloud/ipfs/QmWjUnivRf2diPCrdGYvKTdjccNJjNJzLrk14NuyVgC7Ui?img-width=20&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></a></div>
+							<div class=" lg:block">
+								<div class="p-2 rounded flex items-center gap-1 text-sm bg-blue-300"><span
+										  class="relative flex shrink-0 overflow-hidden rounded-full w-4 h-4"><img
+											 class="aspect-square h-full w-full" alt="anon"
+											 src="https://www.pinclipart.com/picdir/big/184-1843111_pepe-the-frog-crying-png-clipart.png"></span><a
+									   href="/profile/XRJS6zinp7yxBzunfYo5PykzipKbkqbE5gadkB33Ttu"><span
+											  class="hover:underline">XRJS6z </span></a><span>created </span><a
+									   class="hover:underline flex gap-2"
+									   href="/Co39sNz4PFn2Hp4yZtD3Wn7z2jy9EK7MeMna9JfMpump">HOWDY<img alt=""
+											 loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+											 class="h-5 w-5 rounded-full"
+											 src="https://pump.mypinata.cloud/ipfs/QmdtwXbu5jzEhCP2f86XNtmggZf53jbaSkceKftfW68XdW?img-width=20&amp;img-dpr=2&amp;img-onerror=redirect"
+											 style="color: transparent; display: block;"></a><span> on 08/04/24 </span>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="md:flex md:gap-2 grid gap-1">
+						<div class="grid justify-items-end"><button
+									class="text-sm text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50"
+									type="button" aria-haspopup="dialog" aria-expanded="false"
+									aria-controls="radix-:r3:" data-state="closed">[connect wallet]</button></div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main class="h-full">
+			<div class="grid h-fit md:gap-12 gap-4">
+				<div class="flex flex-col items-center w-full mt-4"><a
+					   class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2 mb-4 text-2xl text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50"
+					   href="/create">[start a new coin]</a>
+					<div class="text-white max-w-[800px] grid gap-2"><img alt="king of the hill" loading="lazy"
+							 width="166" height="32" decoding="async" data-nimg="1" class="h-8 justify-self-center"
+							 srcset="https://pump.fun/_next/image?url=%2Fking-of-the-hill.png&w=384&q=75 1x,
+								https://pump.fun/_next/image?url=%2Fking-of-the-hill.png&w=384&q=75 2x"
+							 src="https://pump.fun/_next/image?url=%2Fking-of-the-hill.png&w=384&q=75"
+							 style="width: 170px; height: 35px;"><a
+						   href="/EjeJ7HwHkbhDbSvPZDudkvbngnQn1aURDParQhnipump">
+							<div
+								 class="p-2 flex border hover:border-white gap-2 w-full max-h-[300px] overflow-hidden border-transparent">
+								<div class="min-w-20"><img alt="Ebu Dikeç" loading="lazy" width="200" height="200"
+										 decoding="async" data-nimg="1" class="mr-4 w-20 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmXijud3bBTYXyAvGCKAvos1rehHNKcZfxu8PCfTXrub7B?img-width=200&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">devisdead
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 29.50K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:rg:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 14</p>
+									<p class="text-sm w-full font-bold">Ebu Dikeç [ticker: ebu]</p>
+								</div>
+							</div>
+						</a></div>
+				</div>
+				<div class="grid px-2 sm:p-0 justify-center w-[95vw]">
+					<div class="grid gap-2 w-[90vw] max-w-[450px]" style="grid-template-columns:1fr auto">
+						<input type="search"
+							   class="flex h-10 rounded-md text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus-visible:ring-slate-300 p-2 border border-gray-300 w-full bg-green-300 text-black border-none focus:border-none active:border-none"
+							   placeholder="search for token" value=""><button
+								class="bg-green-300 text-black p-2 rounded hover:bg-green-500">search</button>
+					</div>
+				</div>
+				<div class="grid gap-6 md:gap-4 md:px-12 px-2">
+					<div class="grid gap-2 px-2">
+						<div class="flex gap-4"><button
+									class="grid gap-1 cursor-pointer text-gray-500">Following</button><button
+									class="grid gap-1 cursor-pointer text-green-300">Terminal<span
+									  class="w-full h-1 bg-green-300 rounded"></span></button><button
+									class="grid gap-1 cursor-pointer text-gray-500">For You</button></div>
+						<div class="grid sm:flex gap-4 w-full items-center">
+							<div class="flex gap-4"><button type="button" role="combobox" aria-controls="radix-:r6:"
+										aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed"
+										class="flex h-10 w-full sm:w-fit items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus:ring-slate-300 bg-green-300 text-black border-none focus:border-none active:border-none"
+										aria-label="Sort"><span style="pointer-events: none;">sort: bump
+										order</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+										 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										 stroke-linecap="round" stroke-linejoin="round"
+										 class="lucide lucide-chevron-down h-4 w-4 opacity-50" aria-hidden="true">
+										<path d="m6 9 6 6 6-6"></path>
+									</svg></button><button type="button" role="combobox" aria-controls="radix-:r7:"
+										aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed"
+										class="flex h-10 w-full sm:w-fit items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus:ring-slate-300 bg-green-300 text-black border-none focus:border-none active:border-none"
+										aria-label="Order"><span style="pointer-events: none;">order: desc</span><svg
+										 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+										 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+										 stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 opacity-50"
+										 aria-hidden="true">
+										<path d="m6 9 6 6 6-6"></path>
+									</svg></button></div>
+							<div class="md:grid flex flex-wrap text-sm md:gap-1 gap-4">
+								<div class="flex gap-1 h-fit items-center text-white">
+									<div>Show animations:</div>
+									<div class="cursor-pointer px-1 rounded bg-green-300 text-black">On</div>
+									<div class="cursor-pointer px-1 rounded hover:bg-gray-800 text-gray-500">Off</div>
+								</div>
+								<div class="flex gap-1 h-fit items-center text-white">
+									<div>Include nsfw:</div>
+									<div class="cursor-pointer px-1 rounded hover:bg-gray-800 text-gray-500">On</div>
+									<div class="cursor-pointer px-1 rounded bg-green-300 text-black">Off</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="main-content">
+						<!-- <a href="/FmVTpgvMFeGVw6Ajpqc34LiM52sKN6cKajfxgkMwpump"> -->
+						<div
+							 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full animate-shake border-transparent">
+							<div class="min-w-32"><img alt="Rear projection TV" loading="lazy" width="128" height="128"
+									 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+									 src="https://pump.mypinata.cloud/ipfs/QmVrBpBWp83Va6QhUfL5qeKwSypxPKpGkFU8fNui4An7bF?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+									 style="color: transparent; display: block;"></div>
+							<div class="gap-1 grid h-fit">
+								<div class="text-xs text-blue-200 flex items-center gap-2">
+									<div>Created by</div><button type="button"><span
+											  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+												 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+												 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+												 style="color: transparent; display: block;"><span
+												  class="px-1 rounded hover:underline flex gap-1"
+												  style="background-color: transparent;">F1wvGm
+											</span></span></button>
+								</div>
+								<div class="text-xs text-green-300 flex gap-1">market cap: 5.23K</div>
+								<p class="text-xs flex items-center gap-2">replies: 17</p>
+								<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+									<span class="font-bold">Rear projection TV (ticker: RPTV): </span>Rear
+									projection TVs were popular before the widespread adoption of flat-panel LCD,
+									LED, and plasma TVs.
+								</p>
+							</div>
+						</div>
+						<!-- </a> -->iv <a href="/G4zu9pYnPyoUAWoGbg386C2UdCS1vb8S7zARDfirpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Mother Earrf" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmbPCGtN72BgdqrjiWRbF98UiB5z6LDukkfzVjAk6ak4kw?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">9YKLjU
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 21.80K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3i:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 131</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Mother Earrf (ticker: $MERF): </span>Brand new token
+										from the blue moon block chain community. Mother Earth Meme Coin: The eco-meme
+										sensation that's sprouting profits and giggles! 🌱😄 This playful crypto
+										combines environmental activism with meme culture, making it fun to invest in a
+										greener planet. Trade with a smile and help Mother Earth thrive!
+									</p>
+								</div>
+							</div>
+						</a><a href="/FobD8jV8iySTkdAisGzBZz5n8Uct9CUGn7MU6DD7pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="PFP DOG" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmeymkNwnU3JsqYPejNR36Qfx1jfDyFWXQMXdfcZXLPJ31?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">pfpdoggo
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 6.96K</div>
+									<p class="text-xs flex items-center gap-2">replies: 39</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">PFP DOG (ticker: PFP): </span>PFP DOG THE 2ND MOST
+										MEMEABLE DOG ON SOLANA SOON THE MOST MEMEABLE PFP DOG IS READY FOR 100M+ RIDE
+										PUT A PFP AND LETS RIDE
+									</p>
+								</div>
+							</div>
+						</a><a href="/AiDzr9bbvWV9hQhVGpRMJTXDCBP2VJxmPEsHLy1Bpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="6inch" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmXu6TyeujzY2AwJvY7ErMWnbBkRQbhAamwsrQiQAe3jQH?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">4uiEQv
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.33K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">6inch (ticker: 6inch): </span>6 inchs long
+									</p>
+								</div>
+							</div>
+						</a><a href="/8mDP96TCotPgbqyekrQDsLgARA8Y6FevhnqjenbKpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="MOMO CANDY GIRL" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmXDjtrKHZP4SWHmCN9rYeeZ4F5X6dCVmsm3sWf2BUDyLV?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">momo_devv
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 7.87K</div>
+									<p class="text-xs flex items-center gap-2">replies: 23</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">MOMO CANDY GIRL (ticker: MOMO): </span>MOMO CANDY GIRL ,
+										CUTEST DOG IN ASIA.
+									</p>
+								</div>
+							</div>
+						</a><a href="/DPZtWxELtdiH9GUSEBf7izwfoLuVmg6wViskfca3pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="CheatedOnCryptoDownLamboRepoBYE" loading="lazy"
+										 width="128" height="128" decoding="async" data-nimg="1"
+										 class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmUJSpUhQP59tJiky5C2aS2ZUxXwcfSwGc1mrMfnZGsjEG?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">EeeLzJ
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 24.28K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3b:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 151</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">CheatedOnCryptoDownLamboRepoBYE (ticker: DOWNBAD):
+										</span>We are all down bad! Lets make it all back with 1 trade and send this to
+										a billi! This coin was inspired by Bark's post. 1% bag for BARK to get his Lambo
+										out of Repo!
+									</p>
+								</div>
+							</div>
+						</a><a href="/7JJB4b65MAu6dM5YPDsg4ZTCwHAgkehVoQ4RbAXLpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-2 border-green-300 rounded-lg">
+								<div class="min-w-32"><img alt="Orange" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmR1N52J54KNim297JhrTav6mX6xKA9iFpeUw9GABmZJuL?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div
+										 class="w-fit px-1 bg-green-300 text-green-800 text-xs font-bold rounded dark:bg-red-900 dark:text-red-300">
+										Currently live streaming!</div>
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmR1N52J54KNim297JhrTav6mX6xKA9iFpeUw9GABmZJuL?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">MOENAWI
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 27.25K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r38:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 99</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Orange (ticker: COLOR): </span>Orange for now.
+									</p>
+								</div>
+							</div>
+						</a><a href="/5DwvFad1NALJf77QFB6ycxu9pEw43edRYWbdZcBepump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Wall Street Rekt" loading="lazy" width="128"
+										 height="128" decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmTTFxvhM3Z8261kbsvvuzNn9Adn3HQK4uGSyqjLcW187e?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">7fFX6B
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 16.73K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3c:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 183</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Wall Street Rekt (ticker: $REKT): </span>Fly Corn Fly
+									</p>
+								</div>
+							</div>
+						</a><a href="/AvVZv5Tem9LWS3SivFEnvhRrYLDqHeyk1GuNY5JXpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Cat In Microwave " loading="lazy" width="128"
+										 height="128" decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmRg98D4UNWEv6dkxkmdSiKpAW2qVAtfYHTHUZcHmAH7o7?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">6SBy3w
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 24.59K</div>
+									<p class="text-xs flex items-center gap-2">replies: 21</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Cat In Microwave (ticker: COOKED): </span>Solana is
+										$cooked Market is $cooked Cat is $cooked Everything is $cooked
+									</p>
+								</div>
+							</div>
+						</a><a href="/7VYBA6SQtm6EbgoNdtP6JYDZtKBrBv2NBcWS9Wzcpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="THIS is GOLD" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmWtHoBxtS829xGt5qdfsCWT222s62T1NH1jaasPJgCooh?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">21NdnC
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 24.18K</div>
+									<p class="text-xs flex items-center gap-2">replies: 92</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">THIS is GOLD (ticker: TG): </span>hi im gold
+									</p>
+								</div>
+							</div>
+						</a><a href="/3G7LXN6SuUBZTiDDkwdphAWXTg7big7fkvppvDRTpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="BWED" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmbaYhKqUWgvd1Q1ucy2hZXiphkHFMfnoTUvg5dcsuEU5W?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmbaYhKqUWgvd1Q1ucy2hZXiphkHFMfnoTUvg5dcsuEU5W?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">bwed
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 21.78K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r35:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 158</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">BWED (ticker: BWED): </span>I hope you wike it. Pwease
+										twy some of my bwed!
+									</p>
+								</div>
+							</div>
+						</a><a href="/8paFrQ6KLY6J2Kmvq59P187BZ5rnqpUAZiFhzBhKpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="1000 kg" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmT4v1RWxykyNEe3XQwvXEJvbYnU1mYyu1JoDYMbt8iKWU?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">7Mjyzb
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 9.57K</div>
+									<p class="text-xs flex items-center gap-2">replies: 14</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">1000 kg (ticker: 1000kg): </span>
+									</p>
+								</div>
+							</div>
+						</a><a href="/DFe5zXhNDKUuF49G7hYJC2aCBd1zEq9DBR9sALNVpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Boo" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmdCxKvGpCujQuss8ftrNtEe6BVXuNJfFCX3GXXorJJqy4?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">53ZrPd
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 5.34K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3s:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 125</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Boo (ticker: BOO):
+										</span>bo0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o00o0o0o0o0o0o!
+									</p>
+								</div>
+							</div>
+						</a><a href="/6G4sWBxZdgf6W6TcVoifbWmaUUvevp5hrVEqHnzVpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Load Your Bags" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/Qmcamqe17g6S65ghyQ4AMKcyTo8C821278zsVA3Rt82wNw?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/Qmcamqe17g6S65ghyQ4AMKcyTo8C821278zsVA3Rt82wNw?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">LoadedBags
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.06K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r34:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 94</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Load Your Bags (ticker: BAGS): </span>$BAGS are you
+										loaded?
+									</p>
+								</div>
+							</div>
+						</a><a href="/HWnTEdDnLAPbPQiXZjBLjpuUFe2CV6j7aFapHBkTpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Dog Jump Index" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmZPd6n8eAkougHRZW3BPi2tdjGznwKgvDkwfyz1RskNiC?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">DXzS4R
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Dog Jump Index (ticker: DJI): </span>The Dog Jump Index
+										(DJI) is a stock market index of 30 prominent companies listed on stock
+										exchanges in the United States.
+									</p>
+								</div>
+							</div>
+						</a><a href="/8Q4LMxrVxbvhFmorHVvXaDwp8WGM65YTanGt7Cu5pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="6inch" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmRUcSK27dfwJGGJusjDB27bErmZ1wz6wVjQaCRLSc5tw7?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmQpFGP9n7e1xZ8pDBLHenc8Ym11DjHT2Ay6vKKV6RsntC?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">TomasFX1
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">6inch (ticker: 6inch): </span>
+									</p>
+								</div>
+							</div>
+						</a><a href="/ELSU1nAgYbQJ2Ejw8QHZgTTQw1xoVssxHnVuedzrpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="MIA" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/Qmb96Qoe6SJ3QAN58PaumWJxzu8QHduWvVANyBhYmfVkGY?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">3EvPMj
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 18.09K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3f:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 223</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">MIA (ticker: MIA): </span>Through all the chaos
+										happening right now, all we need is a cute little goat
+									</p>
+								</div>
+							</div>
+						</a><a href="/Gp2X9wfFjCnTKfLtJ43Jju9BNCXR3Aq17PGXtB87pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="1000cm" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmWmnRRAiruvMmjXfN3ySrmUbP6iWRJ6VphouEjfurj28h?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">6wRZqZ
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 38.68K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r36:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 100</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">1000cm (ticker: 1000cm): </span>
+									</p>
+								</div>
+							</div>
+						</a><a href="/BDzCs1jKJBVkQFZqJg8X1XvTfKwTLJb7S5c4zGWepump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="1/4miles" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmSJdSiKmk1ruo5SEFKhabMovAThxKSJyNesVxJ6C3VheF?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">645fJm
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">1/4miles (ticker: 1/4miles): </span>Nothing is stronger
+										than family
+									</p>
+								</div>
+							</div>
+						</a><a href="/Euz4B7BDxziQyAjXRdnBeBxGEFWM4n5jhGtkJcTVpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Day Off Trading" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmZFgew3WUT3YQRijEe77SjTLKJuEoeCV5QoeTC8GJLB1u?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">3jBF8h
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 10.20K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r33:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 39</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Day Off Trading (ticker: DOT): </span>It's my day off
+										trading
+									</p>
+								</div>
+							</div>
+						</a><a href="/B4jqLkEj9q4FE8ma2m9KJPJjjySMWxegA63s1y9Kpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Pumpium" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmRhYujpHjCcmaJwSSQ9zDEi7e8BBCPvzjnFHmbpcoXRv6?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">6mHZFc
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 16.95K</div>
+									<p class="text-xs flex items-center gap-2">replies: 61</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Pumpium (ticker: PUMPIUM): </span>
+									</p>
+								</div>
+							</div>
+						</a><a href="/8h4MSPPHBgovjWaKvgz9chVAEJ4Tah6WYiuM5o73pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="TRE$HO" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmXi92EwdKKQM9RtXf3zwzvgSmgZvB2ZqrcMz4YB8HfCiD?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">TRESHO_DEV
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 14.18K</div>
+									<p class="text-xs flex items-center gap-2">replies: 78</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">TRE$HO (ticker: TRE$HO): </span>Puff Puff to the Moon
+										with TRE$HO’s Rolling up a piece of our 420 on Solana
+									</p>
+								</div>
+							</div>
+						</a><a href="/3DJ4FEBUcFCcXyynmCzHmYqbuJAf4wHtFPAS3jfGpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Purple" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmSNxpfCwz5p4tL9YSYVEmkHM6aB3fauBGo5HMFenChwMC?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmYg8N2nfCN1qsW3f8bDNodwRniWbJ3sjGYEDYv7uh4qdf?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">Chilldev
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 7.98K</div>
+									<p class="text-xs flex items-center gap-2">replies: 34</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Purple (ticker: Purple): </span>Color of Solana
+									</p>
+								</div>
+							</div>
+						</a><a href="/CMcmvzGaELF6bqpGNjSX78g1NYbZnRSNmbERJZWRpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="6inch" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmT6PzLUrFPzwxVHA9oeqBAjyoVK7SyiscUxAHijXPrASw?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">gpEg1S
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.59K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">6inch (ticker: 6inch):
+										</span>https://t.me/+hItYCeRwbwEwMjY5
+									</p>
+								</div>
+							</div>
+						</a><a href="/7rzfiDXogkybzEwNCw8DS4FtAH7rKvfg2v5GEeWnpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="henry" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmRGAqyDEi3ffrp8s6CnasvTi6otxoZnx7sgx5AjLm5jW7?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">FK871C
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 20.58K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3r:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 198</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">henry (ticker: henry): </span>crushed this fucker in my
+										shower. Feel bad now. He shall be immortalised on the blockchain. $henry. RIP
+									</p>
+								</div>
+							</div>
+						</a><a href="/5nqEdiimktQ1ywfzze4TwHJJUvwx4HVCg57Kxmc4pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Kenta on SOL" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmZ4JcghQQAW2rC6Nw2XMTgCwdabrmHHLAbntrmUxeTZs3?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">84sqnn
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 6.57K</div>
+									<p class="text-xs flex items-center gap-2">replies: 4</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Kenta on SOL (ticker: KENTA): </span>No more monkeying
+										around . Proper meme here
+									</p>
+								</div>
+							</div>
+						</a><a href="/9VNVsZPCWMmp1nsbxsAH7ERTUmqUSyNtjC4pVFkvpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Wall Tape Fun" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmWB3ymg7GY4evdMcNin2pd8X3X4k7cmtwqHvgmHhjptws?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">walltape
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.57K</div>
+									<p class="text-xs flex items-center gap-2">replies: 1</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Wall Tape Fun (ticker: WTF): </span>I'm Just pill having
+										fun taped in the wall https://t.me/walltapefun_portal
+									</p>
+								</div>
+							</div>
+						</a><a href="/39pRgUWgcUjjq5KELjmzRWNZJNtU1xpq3FcGE3Napump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Baby Blue Whale" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/Qme6wBoWgMcUbjrcuTMbPvm6Rnu2uxesgt3mNDcBCbTdW5?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/Qme6wBoWgMcUbjrcuTMbPvm6Rnu2uxesgt3mNDcBCbTdW5?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">BabyBwhale
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 20.78K</div>
+									<p class="text-xs flex items-center gap-2">replies: 189</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Baby Blue Whale (ticker: $BBW): </span>In the vast
+										digital ocean of the cryptocurrency world, there existed tiny baby blue whale
+										and massive "crypto whales." Among these tiny investors was a curious and
+										determined baby blue whale. Eager to make its mark, the baby blue whale dreamed
+										of increasing its small stash of coins into a massive treasure trove, just like
+										the mighty crypto whales it admired. Every day, it explored different
+										blockchains, analyzed trends, and learned from seasoned investors, seeking the
+										best strategies and promising tokens to fuel its growth. With unwavering
+										determination and boundless dreams, the baby blue whale embarked on an exciting
+										journey to discover its potential and become the mighty crypto whale it was
+										destined to be.
+									</p>
+								</div>
+							</div>
+						</a><a href="/3ir5MXW4uL26HMzG5FPkrUKmSzcXTBxyF8STuyuMpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="CYBERDUCK " loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmbHbFCpwEPoqRRYVQp9xxUTZ6HepATkWUw3Z7aSg89Qdz?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">4NeFDX
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 7.05K</div>
+									<p class="text-xs flex items-center gap-2">replies: 214</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">CYBERDUCK (ticker: CYBERDUCK ): </span>Cats and dogs are
+										cool, but this is CYBERDUCK
+									</p>
+								</div>
+							</div>
+						</a><a href="/7rpQhmXS5tVkq9Lni81c7GCCfy9h4Tp3Dqxg55hipump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Gnarp" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmdMWfatDJtoDY1st3bqsHSt7ureRamML7LGsUtKc9TW58?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">3F713E
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.77K</div>
+									<p class="text-xs flex items-center gap-2">replies: 77</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Gnarp (ticker: GNARP): </span>Deep State, why you so
+										gnarp gnap 👽...
+									</p>
+								</div>
+							</div>
+						</a><a href="/7ysMJ6G5uAkqHCgxVG2sanqAHVtLbJcQJMKWXZ2Npump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="frens koll" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmQ7bPEGhYP2m4UyeZTubF9hAr1Avx8K1Mp4ZReFuLajWG?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">Fd7ruY
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 17.74K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r37:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 59</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">frens koll (ticker: koll): </span>join the conference,
+										fren
+									</p>
+								</div>
+							</div>
+						</a><a href="/8rrEuHyeJuvsVkzfWwY2E67bQCCfmKiFU1hoY3d1pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Giant Moony" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmVQMwxbK7W3Uv3ybvuFPhwNmqNGrqU7z5mmggtSPJbVSJ?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">85q4br
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.99K</div>
+									<p class="text-xs flex items-center gap-2">replies: 1</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Giant Moony (ticker: 200m): </span>This cat can reach
+										the highest.
+									</p>
+								</div>
+							</div>
+						</a><a href="/BvaUbM4hNyZFmC1rMzHU7VUW2XYKQDUYe5py1egVpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="100kg" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmcNXoNtuMRVLyKYsxZx1s4wTR6s28LnHuVQvdSsdE4LP2?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">4x4NYr
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 5.12K</div>
+									<p class="text-xs flex items-center gap-2">replies: 2</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">100kg (ticker: 100kg): </span>100kg cat
+									</p>
+								</div>
+							</div>
+						</a><a href="/DjVrNgi6SBHtFZj6Mp47APKC597fUdKTsMcHwSUqpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="ANNY" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmeBvJ7NfjUZhCPqbvmTqGHVmQBWf2mQp6CoQpBetoGZZD?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">F2dPZJ
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 16.51K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3m:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 71</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">ANNY (ticker: ANNY ): </span>ANNY
+									</p>
+								</div>
+							</div>
+						</a><a href="/3pwfPAEghVQ1GWMio1AxDzkW8wxU8ub1P72H4ermpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="YUNI" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmXnwWiSCEquuWGjRp3pr6qHbKaeawJtvqcu5bKrZn8dgf?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">AAKb9g
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">YUNI (ticker: YUNI): </span>yuni.
+									</p>
+								</div>
+							</div>
+						</a><a href="/2c2u71C2EVw3TnJEVFUbDVFZ9n3XgRdXqdgG9f4opump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Flying Lobster Pig" loading="lazy" width="128"
+										 height="128" decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmegpAJ7DAXUniP585VXEodCW2DyDikLLbJYYjQGsnm1DE?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">DYhnAo
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 5.03K</div>
+									<p class="text-xs flex items-center gap-2">replies: 10</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Flying Lobster Pig (ticker: FLP): </span>It’s a
+										bird…It’s a plane…It’s Lobster Pig!
+									</p>
+								</div>
+							</div>
+						</a><a href="/4yhtCpnypLGxNo5NNrMFnHxD5PfkWds5Hm2JoNLypump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Dinus" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmWQy6q2PpUX5xnRpFxhcpN2R8kyvnctcnrqQaiju6f4Nn?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmWQy6q2PpUX5xnRpFxhcpN2R8kyvnctcnrqQaiju6f4Nn?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">Dinus
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.66K</div>
+									<p class="text-xs flex items-center gap-2">replies: 1</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Dinus (ticker: DINUS): </span>Meet DINUS, legendary with
+										Pepe, Brett, Ponke, and Peng, known for his thrill-seeking nature in the crypto
+										world
+									</p>
+								</div>
+							</div>
+						</a><a href="/7tpw7CHd4VAVBtsNr7AHpAfx5kJMwWsA64KkUUGVpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Kamaga" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/Qmb66Mf6wn11SD5a7vBJYB8NLcMqRqdKUYzftzmU3ioQPp?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">6bHTyF
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.11K</div>
+									<p class="text-xs flex items-center gap-2">replies: 3</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Kamaga (ticker: Kamaga): </span>onal and Kemala plonk
+										down on a heart-shaped bed, munchin' on fried chicken wings (Donal said it’s da
+										real love food), and lookin' into each other’s eyes. Donal was like, "Kemala,
+										your eyes are sparkly like bitcoin," and Kemala’s like, "Donal, your hair’s got
+										more bounce than a Jollof rice pot." 🍗💕
+									</p>
+								</div>
+							</div>
+						</a><a href="/CYHsh3EYouSHKaXtRcFeGuX5ncDVYzF1jfAdVtS9pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="McDonkey" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/Qmbsbj8BLZzCC7wNwwQXmgQngtyaQ9hFfmc12HWSf7w1JF?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">98eTSp
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 10.05K</div>
+									<p class="text-xs flex items-center gap-2">replies: 55</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">McDonkey (ticker: $MCDO): </span>He sold for a Big Mac
+										Menu...
+									</p>
+								</div>
+							</div>
+						</a><a href="/BDDpjyZNC9rDa4mVhQWkBrUFoqmZzJxLN2cAaqa9pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Bubu the Bear" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmTeUnKAaFKvgn983xCih5MsFkxeb5UPbT56F8PfqEbrkt?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">shiba87
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 28.57K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3q:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 66</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Bubu the Bear (ticker: BUBU): </span>The mascot of the
+										bear market, and yeah it's over, guys.
+									</p>
+								</div>
+							</div>
+						</a><a href="/BKyAPLdVaq6FfEeNsmerWDJ1r3rbj36WEp15HNhipump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Smoking Boner Pill" loading="lazy" width="128"
+										 height="128" decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmWqkwveX9iszQe7cLwndoN7eapsyQJjeZRoDyTZ4orkq6?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">SBPDEV
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 35.73K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3n:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 164</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Smoking Boner Pill (ticker: $ERECT): </span>You’ve never
+										seen a dick pill this “hardcore” in your life!
+									</p>
+								</div>
+							</div>
+						</a><a href="/4XUrTK5eFdukFWmRRtfokUPvRMaQ5AG2cvSGbvRQpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="MOFI" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmW8jCxrM4p3ohHeBzE14EYgxeEMhK9sZx6FXcUphsFKnj?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmW8jCxrM4p3ohHeBzE14EYgxeEMhK9sZx6FXcUphsFKnj?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">MOFI
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 20.46K</div>
+									<p class="text-xs flex items-center gap-2">replies: 68</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">MOFI (ticker: MOFI): </span>micro $MOFI
+									</p>
+								</div>
+							</div>
+						</a><a href="/HJUEraHhHnQ18wtRfEiWD5hKWUASQ6cksXY1GVSmpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="YUNI" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmY4pgGAoAdB43GWwSb6FWX1HKckarUvgJXNhAEVmAhE8G?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">5rhrhm
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">YUNI (ticker: YUNI): </span>yuni.
+									</p>
+								</div>
+							</div>
+						</a><a href="/6BmQVJZ7b5r2bXPNc7VYHxeQXUqewbptR5sU6QkRWqnU">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="Sally On Sol " loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmRjYU1NDCZQ5kV6sBco6FKpAitPbHVAm8bDdzCCQP2Rkx?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">AuSCC7
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 10.57K</div>
+									<p class="text-xs flex items-center gap-2">replies: 1</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">Sally On Sol (ticker: Sally): </span>SALLY - $sally
+										Sally, Pepe's adorable little sister, belongs to a prestigious lineage of frogs,
+										and she's ready to continue the legacy of none other than her big brother, Pepe
+										himself.
+									</p>
+								</div>
+							</div>
+						</a><a href="/ffWi9R9KAkESdpZHMmqUgVn2EWqn27Ku4rvwKMnpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="EMO CAT" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmeN6RKwZC872z7PqBrac1kGNfFgDbU1nYN9kp4MzUb977?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmapoWJtN7bALEd4M4G18s461TXhxWUrfYBiP37jujMoXr?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">bffdd343b
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.16K<div
+											 class="flex text-green-500">[badge: <div>
+												<div>
+													<div class="cursor-pointer hover:opacity-7" type="button"
+														 aria-haspopup="dialog" aria-expanded="false"
+														 aria-controls="radix-:r3p:" data-state="closed"><img
+															 alt="king of the hill badge" loading="lazy" width="18"
+															 height="18" decoding="async" data-nimg="1"
+															 srcset="/_next/image?url=%2Fking.png&amp;w=32&amp;q=75 1x, /_next/image?url=%2Fking.png&amp;w=48&amp;q=75 2x"
+															 src="/_next/image?url=%2Fking.png&amp;w=48&amp;q=75"
+															 style="color: transparent;"></div>
+												</div>
+											</div>]</div>
+									</div>
+									<p class="text-xs flex items-center gap-2">replies: 35</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">EMO CAT (ticker: EmoCat): </span>rawrxD When i was a
+										young kitten, my father took me into the city :3
+									</p>
+								</div>
+							</div>
+						</a><a href="/8ombPaTKmPEJNfBc9J5YNDzVRMvnJwcyZRtaMfN5pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="EiichiroOda" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmPXVYe4HTmYohKJafu7ryRR9Ap73CHajwMaE1SVYreHuT?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">Eiichiro
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 12.60K</div>
+									<p class="text-xs flex items-center gap-2">replies: 203</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">EiichiroOda (ticker: ODA): </span>Eiichiro Oda
+										(Japanese: 尾田 栄一郎, Hepburn: Oda Eiichirō, born January 1, 1975) is a Japanese
+										manga artist and the creator of the series One Piece. With more than 523.2
+										million tankōbon copies in circulation worldwide, One Piece is both the
+										best-selling manga in history and the best-selling comic series printed in
+										volume, in turn making Oda one of the best-selling fiction authors.The series'
+										popularity resulted in Oda being named one of the manga artists that changed the
+										history of manga.
+									</p>
+								</div>
+							</div>
+						</a><a href="/8fUMgCpQWbTNLq4FvZiu5hBt3SAzeD1pSbHe6gC7pump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="1 METER CAT" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmY7xffSvt2NnsBChzEXaCjDMw21ZaXdM7PZ9ij4p8tTA2?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">BuhRQq
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.29K</div>
+									<p class="text-xs flex items-center gap-2">replies: 1</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">1 METER CAT (ticker: 1M): </span>1 METER CAT - $1M
+									</p>
+								</div>
+							</div>
+						</a><a href="/6akwys4xhxLygvUTLZnmjxa29Fq4MkPzsWTfkJ4Dpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="McDonaldio" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmZ2LCjEXKYEcMZFEGhvtUDKaZZRbM6joVXMJmWKDrzkqg?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">2ffeDK
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 6.56K</div>
+									<p class="text-xs flex items-center gap-2">replies: 43</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">McDonaldio (ticker: MCDIO): </span>Accepting remillions
+										of new job applications daily. Apply now on https://mcdonaldio.fun/
+									</p>
+								</div>
+							</div>
+						</a><a href="/5GzxM5HRMfZHqVfKszZb2SQ71KUtyy9qHFsuyrKTpump">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="40 CM EGGPLANT" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmYy9GSRbrRfnmVATKLjHCRk7dQPXv416W95iRcdpjuzdd?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">7qqwp4
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">40 CM EGGPLANT (ticker: HUGEGG): </span>Do you like
+										massive eggplants? Join if you don't.
+									</p>
+								</div>
+							</div>
+						</a><a href="/2QRcuij5qVGkuFtPsP4X5pzXWuhZEeQSNHydaEC9xJjj">
+							<div
+								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full  border-transparent">
+								<div class="min-w-32"><img alt="JEJE" loading="lazy" width="128" height="128"
+										 decoding="async" data-nimg="1" class="mr-4 w-32 h-auto"
+										 src="https://pump.mypinata.cloud/ipfs/QmaAZcRjDCL3HRDJvnJwJgGEEQyKjp6svF6cSmN7Na1D8F?img-width=128&amp;img-dpr=2&amp;img-onerror=redirect"
+										 style="color: transparent; display: block;"></div>
+								<div class="gap-1 grid h-fit">
+									<div class="text-xs text-blue-200 flex items-center gap-2">
+										<div>Created by</div><button type="button"><span
+												  class="flex gap-1  items-center"><img alt="" loading="lazy" width="16"
+													 height="16" decoding="async" data-nimg="1" class="w-4 h-4 rounded"
+													 src="https://pump.mypinata.cloud/ipfs/QmeSzchzEPqCU1jwTnsipwcBAeH7S4bmVvFGfF65iA1BY1?img-width=16&amp;img-dpr=2&amp;img-onerror=redirect"
+													 style="color: transparent; display: block;"><span
+													  class="px-1 rounded hover:underline flex gap-1"
+													  style="background-color: transparent;">GY47HJ
+												</span></span></button>
+									</div>
+									<div class="text-xs text-green-300 flex gap-1">market cap: 4.04K</div>
+									<p class="text-xs flex items-center gap-2">replies: 0</p>
+									<p class="text-sm w-full" style="overflow-wrap: break-word; word-break: break-all;">
+										<span class="font-bold">JEJE (ticker: $JEJE): </span>This is the part where we
+										try to tell you about our glorious leader JeJe and how he’s going to transform
+										the industry, but the reality is, we are all here for JeJe, for memes, and for
+										some lolz. Fundamentally, what we got is deez nuts on our side so we’re good.
+									</p>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="w-full flex justify-center mt-4">
+					<div class="justify-self-end mb-20">
+						<div class="flex justify-center space-x-2 text-slate-50"><button disabled=""
+									class="text-sm text-slate-400 cursor-not-allowed">[ &lt;&lt;
+								]</button><span>1</span><button
+									class="text-sm text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50">[
+								&gt;&gt; ]</button></div>
+					</div>
+				</div>
+				<div class="mt-auto py-4 text-gray-400 text-sm md:px-12 px-2">
+					<div class="flex justify-between items-center relative">
+						<p class="flex-shrink-0">© pump.fun <!-- -->2024</p>
+						<p class="text-gray-400 text-xs absolute left-1/2 transform -translate-x-1/2 text-center">This
+							site is protected by reCAPTCHA and the Google<!-- --> <a
+							   href="https://www.google.com/intl/en/policies/privacy/" target="_blank"
+							   rel="noopener noreferrer" class="underline">Privacy Policy</a> <!-- -->and<!-- --> <a
+							   href="https://www.google.com/intl/en/policies/terms/" target="_blank"
+							   rel="noopener noreferrer" class="underline">Terms of Service</a> <!-- -->apply.</p>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div role="region" aria-label="Notifications (F8)" tabindex="-1" style="pointer-events:none">
+			<ol tabindex="-1"
+				class="fixed top-0 z-[100] max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px] grid gap-2">
+			</ol>
+		</div>
+	</div>
+</body>
+
 </html>
