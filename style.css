@@ -1,3 +1,5 @@
+@import url("/root.css");
+
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -185,26 +187,32 @@ video {
 	--tw-bg-opacity: 1;
 	background-color: rgb(147 197 253 / var(--tw-bg-opacity)) !important;
 }
+
 .bg-yellow-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(255 248 50 / var(--tw-bg-opacity));
 }
+
 .bg-pink-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(255 192 203 / var(--tw-bg-opacity));
 }
+
 .bg-purple-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(160 3 160 / var(--tw-bg-opacity));
 }
+
 .bg-lemon-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(126 206 126 / var(--tw-bg-opacity));
 }
+
 .bg-pitch-300 {
 	--tw-bg-opacity: 1;
 	background-color: rgb(251 214 6 / var(--tw-bg-opacity));
 }
+
 .bg-orange-300 {
 	color: white;
 	--tw-bg-opacity: 1;
@@ -240,20 +248,20 @@ video {
 }
 
 .transform,
-.translate-y-\[-50\%\] {
+.translate-y-\[-50\%\], .popup-box{
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .-translate-x-1\/2,
-.translate-x-0 {
+.translate-x-0 , .popup-box{
 	transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.-translate-x-1\/2 {
+.-translate-x-1\/2 , .popup-box{
 	--tw-translate-x: -50%;
 }
 
-.left-1\/2 {
+.left-1\/2, .popup-box {
 	left: 50%;
 }
 
@@ -573,7 +581,10 @@ user agent stylesheet img {
 
 
 
-
+.popup-box {
+	display: none !important;
+	display: grid !important;
+}
 
 @media (min-width: 640px) {
 	.sm\:p-0 {

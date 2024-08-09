@@ -18,3 +18,20 @@ const switcher = () => {
 }
 
 setInterval(() => { switcher(), roller() }, 1000)
+
+const popupbg = document.querySelector(".pop-up-bg")
+const popupbox = document.querySelector(".popup-box")
+const connectWallet = document.querySelector(".connect-wallet")
+console.log(popupbg.attributes['data-state'].value)
+// console.log(popupbg.style.display = "none")
+
+connectWallet.addEventListener('click', () => {
+	popupbg.style.display = "block"
+})
+popupbox.addEventListener('click', (e) => {
+	e.stopPropagation()
+}, { capture: false })
+popupbg.addEventListener('click', (e) => {
+	e.stopPropagation()
+	popupbg.style.display = "none"
+}, { capture: false })
