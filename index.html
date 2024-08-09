@@ -7,6 +7,7 @@
 	<title>Pump connect</title>
 	<link rel="stylesheet" href="./style.css">
 	<link rel="stylesheet" href="./dialogue.css">
+	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
 
 	<style>
 		#nprogress {
@@ -93,34 +94,231 @@
 		 class="pop-up-bg hidden fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
 		 style="pointer-events: auto;" data-aria-hidden="true" aria-hidden="true">
 
-	<div role="dialog" id="radix-:r3:" aria-describedby="radix-:r5:" aria-labelledby="radix-:r4:" data-state="closed"
-		 class="popup-box fixed hidden left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200 p-6 shadow-lg duration-200 data-[state=closed]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=closed]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=closed]:slide-in-from-left-1/2 data-[state=closed]:slide-in-from-top-[48%] sm:rounded-lg dark:border-slate-800 dark:bg-slate-950 bg-primary text-white text-center"
-		 tabindex="-1" style="pointer-events: auto;">
-		<div class="grid gap-4">
-			<div>Connect your wallet</div>
-			<div class="flex justify-center items-center"><button
-						class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md"><img
-						 alt="Solflare" width="24" height="24" decoding="async" data-nimg="1" class="absolute left-2"
-						 src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJhIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmMxMGIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmYjNmMmUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI2LjQ3ODM1IiB4Mj0iMzQuOTEwNyIgeGxpbms6aHJlZj0iI2EiIHkxPSI3LjkyIiB5Mj0iMzMuNjU5MyIvPjxyYWRpYWxHcmFkaWVudCBpZD0iYyIgY3g9IjAiIGN5PSIwIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDQuOTkyMTg4MzIgMTIuMDYzODc5NjMgLTEyLjE4MTEzNjU1IDUuMDQwNzEwNzQgMjIuNTIwMiAyMC42MTgzKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHI9IjEiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggZD0ibTI1LjE3MDggNDcuOTEwNGMuNTI1IDAgLjk1MDcuNDIxLjk1MDcuOTQwM3MtLjQyNTcuOTQwMi0uOTUwNy45NDAyLS45NTA3LS40MjA5LS45NTA3LS45NDAyLjQyNTctLjk0MDMuOTUwNy0uOTQwM3ptLTEuMDMyOC00NC45MTU2NWMuNDY0Ni4wMzgzNi44Mzk4LjM5MDQuOTAyNy44NDY4MWwxLjEzMDcgOC4yMTU3NGMuMzc5OCAyLjcxNDMgMy42NTM1IDMuODkwNCA1LjY3NDMgMi4wNDU5bDExLjMyOTEtMTAuMzExNThjLjI3MzMtLjI0ODczLjY5ODktLjIzMTQ5Ljk1MDcuMDM4NTEuMjMwOS4yNDc3Mi4yMzc5LjYyNjk3LjAxNjEuODgyNzdsLTkuODc5MSAxMS4zOTU4Yy0xLjgxODcgMi4wOTQyLS40NzY4IDUuMzY0MyAyLjI5NTYgNS41OTc4bDguNzE2OC44NDAzYy40MzQxLjA0MTguNzUxNy40MjM0LjcwOTMuODUyNC0uMDM0OS4zNTM3LS4zMDc0LjYzOTUtLjY2MjguNjk0OWwtOS4xNTk0IDEuNDMwMmMtMi42NTkzLjM2MjUtMy44NjM2IDMuNTExNy0yLjEzMzkgNS41NTc2bDMuMjIgMy43OTYxYy4yNTk0LjMwNTguMjE4OC43NjE1LS4wOTA4IDEuMDE3OC0uMjYyMi4yMTcyLS42NDE5LjIyNTYtLjkxMzguMDIwM2wtMy45Njk0LTIuOTk3OGMtMi4xNDIxLTEuNjEwOS01LjIyOTctLjI0MTctNS40NTYxIDIuNDI0M2wtLjg3NDcgMTAuMzk3NmMtLjAzNjIuNDI5NS0uNDE3OC43NDg3LS44NTI1LjcxMy0uMzY5LS4wMzAzLS42NjcxLS4zMDk3LS43MTcxLS42NzIxbC0xLjM4NzEtMTAuMDQzN2MtLjM3MTctMi43MTQ0LTMuNjQ1NC0zLjg5MDQtNS42NzQzLTIuMDQ1OWwtMTIuMDUxOTUgMTAuOTc0Yy0uMjQ5NDcuMjI3MS0uNjM4MDkuMjExNC0uODY4LS4wMzUtLjIxMDk0LS4yMjYyLS4yMTczNS0uNTcyNC0uMDE0OTMtLjgwNmwxMC41MTgxOC0xMi4xMzg1YzEuODE4Ny0yLjA5NDIuNDg0OS01LjM2NDQtMi4yODc2LTUuNTk3OGwtOC43MTg3Mi0uODQwNWMtLjQzNDEzLS4wNDE4LS43NTE3Mi0uNDIzNS0uNzA5MzYtLjg1MjQuMDM0OTMtLjM1MzcuMzA3MzktLjYzOTQuNjYyNy0uNjk1bDkuMTUzMzgtMS40Mjk5YzIuNjU5NC0uMzYyNSAzLjg3MTgtMy41MTE3IDIuMTQyMS01LjU1NzZsLTIuMTkyLTIuNTg0MWMtLjMyMTctLjM3OTItLjI3MTMtLjk0NDMuMTEyNi0xLjI2MjEuMzI1My0uMjY5NC43OTYzLS4yNzk3IDEuMTMzNC0uMDI0OWwyLjY5MTggMi4wMzQ3YzIuMTQyMSAxLjYxMDkgNS4yMjk3LjI0MTcgNS40NTYxLTIuNDI0M2wuNzI0MS04LjU1OTk4Yy4wNDU3LS41NDA4LjUyNjUtLjk0MjU3IDEuMDczOS0uODk3Mzd6bS0yMy4xODczMyAyMC40Mzk2NWMuNTI1MDQgMCAuOTUwNjcuNDIxLjk1MDY3Ljk0MDNzLS40MjU2My45NDAzLS45NTA2Ny45NDAzYy0uNTI1MDQxIDAtLjk1MDY3LS40MjEtLjk1MDY3LS45NDAzcy40MjU2MjktLjk0MDMuOTUwNjctLjk0MDN6bTQ3LjY3OTczLS45NTQ3Yy41MjUgMCAuOTUwNy40MjEuOTUwNy45NDAzcy0uNDI1Ny45NDAyLS45NTA3Ljk0MDItLjk1MDctLjQyMDktLjk1MDctLjk0MDIuNDI1Ny0uOTQwMy45NTA3LS45NDAzem0tMjQuNjI5Ni0yMi40Nzk3Yy41MjUgMCAuOTUwNi40MjA5NzMuOTUwNi45NDAyNyAwIC41MTkzLS40MjU2Ljk0MDI3LS45NTA2Ljk0MDI3LS41MjUxIDAtLjk1MDctLjQyMDk3LS45NTA3LS45NDAyNyAwLS41MTkyOTcuNDI1Ni0uOTQwMjcuOTUwNy0uOTQwMjd6IiBmaWxsPSJ1cmwoI2IpIi8+PHBhdGggZD0ibTI0LjU3MSAzMi43NzkyYzQuOTU5NiAwIDguOTgwMi0zLjk3NjUgOC45ODAyLTguODgxOSAwLTQuOTA1My00LjAyMDYtOC44ODE5LTguOTgwMi04Ljg4MTlzLTguOTgwMiAzLjk3NjYtOC45ODAyIDguODgxOWMwIDQuOTA1NCA0LjAyMDYgOC44ODE5IDguOTgwMiA4Ljg4MTl6IiBmaWxsPSJ1cmwoI2MpIi8+PC9zdmc+"
-						 style="color: transparent;">Solflare</button></div>
-			<div class="flex justify-center items-center"><button
-						class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md"><img
-						 alt="Torus" width="24" height="24" decoding="async" data-nimg="1" class="absolute left-2"
-						 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYuNSIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzAzNjRGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjIxODYgOS40OTIxOUMxMC40NTM5IDkuNDkyMTkgOS44MzM5OCAxMC4xMTIxIDkuODMzOTggMTAuODc2OFYxMi40ODk4QzkuODMzOTggMTMuMjU0NSAxMC40NTM5IDEzLjg3NDQgMTEuMjE4NiAxMy44NzQ0SDEzLjY2ODRWMjIuODk3NkMxMy42Njg0IDIzLjY2MjMgMTQuMjg4MyAyNC4yODIyIDE1LjA1MyAyNC4yODIySDE2LjY2NkMxNy40MzA3IDI0LjI4MjIgMTguMDUwNiAyMy42NjIzIDE4LjA1MDYgMjIuODk3NlYxMi41MDE1QzE4LjA1MDYgMTIuNDk3NiAxOC4wNTA2IDEyLjQ5MzcgMTguMDUwNiAxMi40ODk4VjEwLjg3NjhDMTguMDUwNiAxMC4xMTIxIDE3LjQzMDcgOS40OTIxOSAxNi42NjYgOS40OTIxOUgxNS4wNTNIMTEuMjE4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMS4zMzc2IDEzLjg3NDRDMjIuNTQ3NyAxMy44NzQ0IDIzLjUyODcgMTIuODkzNCAyMy41Mjg3IDExLjY4MzNDMjMuNTI4NyAxMC40NzMyIDIyLjU0NzcgOS40OTIxOSAyMS4zMzc2IDkuNDkyMTlDMjAuMTI3NSA5LjQ5MjE5IDE5LjE0NjUgMTAuNDczMiAxOS4xNDY1IDExLjY4MzNDMTkuMTQ2NSAxMi44OTM0IDIwLjEyNzUgMTMuODc0NCAyMS4zMzc2IDEzLjg3NDRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
-						 style="color: transparent;">Torus</button></div>
-			<div class="flex justify-center items-center"><button
-						class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md"><img
-						 alt="Ledger" width="24" height="24" decoding="async" data-nimg="1" class="absolute left-2"
-						 src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzUgMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTIzLjU4OCAwaC0xNnYyMS41ODNoMjEuNnYtMTZhNS41ODUgNS41ODUgMCAwIDAgLTUuNi01LjU4M3oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5KSIvPjxwYXRoIGQ9Im04LjM0MiAwaC0yLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCAtNS41ODUgNS41ODV2Mi43NTdoOC4zNDJ6Ii8+PHBhdGggZD0ibTAgNy41OWg4LjM0MnY4LjM0MmgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDUuNzM5KSIvPjxwYXRoIGQ9Im0xNS4xOCAyMy40NTFoMi43NTdhNS41ODUgNS41ODUgMCAwIDAgNS41ODUtNS42di0yLjY3MWgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS40NzggMTEuNDc4KSIvPjxwYXRoIGQ9Im03LjU5IDE1LjE4aDguMzQydjguMzQyaC04LjM0MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5IDExLjQ3OCkiLz48cGF0aCBkPSJtMCAxNS4xOHYyLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCA1LjU4NSA1LjU4NWgyLjc1N3YtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDExLjQ3OCkiLz48L2c+PC9zdmc+"
-						 style="color: transparent;">Ledger</button></div>
-			<div class="flex justify-center items-center"><button
-						class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md"><img
-						 alt="WalletConnect" width="24" height="24" decoding="async" data-nimg="1"
-						 class="absolute left-2"
-						 src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4NSIgdmlld0JveD0iMCAwIDMwMCAxODUiIHdpZHRoPSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYxLjQzODU0MjkgMzYuMjU2MjYxMmM0OC45MTEyMjQxLTQ3Ljg4ODE2NjMgMTI4LjIxMTk4NzEtNDcuODg4MTY2MyAxNzcuMTIzMjA5MSAwbDUuODg2NTQ1IDUuNzYzNDE3NGMyLjQ0NTU2MSAyLjM5NDQwODEgMi40NDU1NjEgNi4yNzY1MTEyIDAgOC42NzA5MjA0bC0yMC4xMzY2OTUgMTkuNzE1NTAzYy0xLjIyMjc4MSAxLjE5NzIwNTEtMy4yMDUzIDEuMTk3MjA1MS00LjQyODA4MSAwbC04LjEwMDU4NC03LjkzMTE0NzljLTM0LjEyMTY5Mi0zMy40MDc5ODE3LTg5LjQ0Mzg4Ni0zMy40MDc5ODE3LTEyMy41NjU1Nzg4IDBsLTguNjc1MDU2MiA4LjQ5MzYwNTFjLTEuMjIyNzgxNiAxLjE5NzIwNDEtMy4yMDUzMDEgMS4xOTcyMDQxLTQuNDI4MDgwNiAwbC0yMC4xMzY2OTQ5LTE5LjcxNTUwMzFjLTIuNDQ1NTYxMi0yLjM5NDQwOTItMi40NDU1NjEyLTYuMjc2NTEyMiAwLTguNjcwOTIwNHptMjE4Ljc2Nzc5NjEgNDAuNzczNzQ0OSAxNy45MjE2OTcgMTcuNTQ2ODk3YzIuNDQ1NTQ5IDIuMzk0Mzk2OSAyLjQ0NTU2MyA2LjI3NjQ3NjkuMDAwMDMxIDguNjcwODg5OWwtODAuODEwMTcxIDc5LjEyMTEzNGMtMi40NDU1NDQgMi4zOTQ0MjYtNi40MTA1ODIgMi4zOTQ0NTMtOC44NTYxNi4wMDAwNjItLjAwMDAxLS4wMDAwMS0uMDAwMDIyLS4wMDAwMjItLjAwMDAzMi0uMDAwMDMybC01Ny4zNTQxNDMtNTYuMTU0NTcyYy0uNjExMzktLjU5ODYwMi0xLjYwMjY1LS41OTg2MDItMi4yMTQwNCAwLS4wMDAwMDQuMDAwMDA0LS4wMDAwMDcuMDAwMDA4LS4wMDAwMTEuMDAwMDExbC01Ny4zNTI5MjEyIDU2LjE1NDUzMWMtMi40NDU1MzY4IDIuMzk0NDMyLTYuNDEwNTc1NSAyLjM5NDQ3Mi04Ljg1NjE2MTIuMDAwMDg3LS4wMDAwMTQzLS4wMDAwMTQtLjAwMDAyOTYtLjAwMDAyOC0uMDAwMDQ0OS0uMDAwMDQ0bC04MC44MTI0MTk0My03OS4xMjIxODVjLTIuNDQ1NTYwMjEtMi4zOTQ0MDgtMi40NDU1NjAyMS02LjI3NjUxMTUgMC04LjY3MDkxOTdsMTcuOTIxNzI5NjMtMTcuNTQ2ODY3M2MyLjQ0NTU2MDItMi4zOTQ0MDgyIDYuNDEwNTk4OS0yLjM5NDQwODIgOC44NTYxNjAyIDBsNTcuMzU0OTc3NSA1Ni4xNTUzNTdjLjYxMTM5MDguNTk4NjAyIDEuNjAyNjQ5LjU5ODYwMiAyLjIxNDAzOTggMCAuMDAwMDA5Mi0uMDAwMDA5LjAwMDAxNzQtLjAwMDAxNy4wMDAwMjY1LS4wMDAwMjRsNTcuMzUyMTAzMS01Ni4xNTUzMzNjMi40NDU1MDUtMi4zOTQ0NjMzIDYuNDEwNTQ0LTIuMzk0NTUzMSA4Ljg1NjE2MS0uMDAwMi4wMDAwMzQuMDAwMDMzNi4wMDAwNjguMDAwMDY3My4wMDAxMDEuMDAwMTAxbDU3LjM1NDkwMiA1Ni4xNTU0MzJjLjYxMTM5LjU5ODYwMSAxLjYwMjY1LjU5ODYwMSAyLjIxNDA0IDBsNTcuMzUzOTc1LTU2LjE1NDMyNDljMi40NDU1NjEtMi4zOTQ0MDkyIDYuNDEwNTk5LTIuMzk0NDA5MiA4Ljg1NjE2IDB6IiBmaWxsPSIjM2I5OWZjIi8+PC9zdmc+"
-						 style="color: transparent;">WalletConnect</button></div>
+		<div role="dialog" id="radix-:r3:" aria-describedby="radix-:r5:" aria-labelledby="radix-:r4:"
+			 data-state="closed"
+			 class="popup-box fixed hidden left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200 p-6 shadow-lg duration-200 data-[state=closed]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=closed]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=closed]:slide-in-from-left-1/2 data-[state=closed]:slide-in-from-top-[48%] sm:rounded-lg dark:border-slate-800 dark:bg-slate-950 bg-primary text-white text-center"
+			 tabindex="-1" style="pointer-events: auto;">
+			<div class="grid gap-4">
+				<div>Connect your wallet</div>
+				<div class="flex justify-center items-center">
+					<button
+							class="solflare-btn whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md">
+						<img alt="Solflare" width="24" height="24" decoding="async" data-nimg="1"
+							 class="absolute left-2"
+							 src="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjUwIiB2aWV3Qm94PSIwIDAgNTAgNTAiIHdpZHRoPSI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGxpbmVhckdyYWRpZW50IGlkPSJhIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmMxMGIiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmYjNmMmUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYiIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI2LjQ3ODM1IiB4Mj0iMzQuOTEwNyIgeGxpbms6aHJlZj0iI2EiIHkxPSI3LjkyIiB5Mj0iMzMuNjU5MyIvPjxyYWRpYWxHcmFkaWVudCBpZD0iYyIgY3g9IjAiIGN5PSIwIiBncmFkaWVudFRyYW5zZm9ybT0ibWF0cml4KDQuOTkyMTg4MzIgMTIuMDYzODc5NjMgLTEyLjE4MTEzNjU1IDUuMDQwNzEwNzQgMjIuNTIwMiAyMC42MTgzKSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHI9IjEiIHhsaW5rOmhyZWY9IiNhIi8+PHBhdGggZD0ibTI1LjE3MDggNDcuOTEwNGMuNTI1IDAgLjk1MDcuNDIxLjk1MDcuOTQwM3MtLjQyNTcuOTQwMi0uOTUwNy45NDAyLS45NTA3LS40MjA5LS45NTA3LS45NDAyLjQyNTctLjk0MDMuOTUwNy0uOTQwM3ptLTEuMDMyOC00NC45MTU2NWMuNDY0Ni4wMzgzNi44Mzk4LjM5MDQuOTAyNy44NDY4MWwxLjEzMDcgOC4yMTU3NGMuMzc5OCAyLjcxNDMgMy42NTM1IDMuODkwNCA1LjY3NDMgMi4wNDU5bDExLjMyOTEtMTAuMzExNThjLjI3MzMtLjI0ODczLjY5ODktLjIzMTQ5Ljk1MDcuMDM4NTEuMjMwOS4yNDc3Mi4yMzc5LjYyNjk3LjAxNjEuODgyNzdsLTkuODc5MSAxMS4zOTU4Yy0xLjgxODcgMi4wOTQyLS40NzY4IDUuMzY0MyAyLjI5NTYgNS41OTc4bDguNzE2OC44NDAzYy40MzQxLjA0MTguNzUxNy40MjM0LjcwOTMuODUyNC0uMDM0OS4zNTM3LS4zMDc0LjYzOTUtLjY2MjguNjk0OWwtOS4xNTk0IDEuNDMwMmMtMi42NTkzLjM2MjUtMy44NjM2IDMuNTExNy0yLjEzMzkgNS41NTc2bDMuMjIgMy43OTYxYy4yNTk0LjMwNTguMjE4OC43NjE1LS4wOTA4IDEuMDE3OC0uMjYyMi4yMTcyLS42NDE5LjIyNTYtLjkxMzguMDIwM2wtMy45Njk0LTIuOTk3OGMtMi4xNDIxLTEuNjEwOS01LjIyOTctLjI0MTctNS40NTYxIDIuNDI0M2wtLjg3NDcgMTAuMzk3NmMtLjAzNjIuNDI5NS0uNDE3OC43NDg3LS44NTI1LjcxMy0uMzY5LS4wMzAzLS42NjcxLS4zMDk3LS43MTcxLS42NzIxbC0xLjM4NzEtMTAuMDQzN2MtLjM3MTctMi43MTQ0LTMuNjQ1NC0zLjg5MDQtNS42NzQzLTIuMDQ1OWwtMTIuMDUxOTUgMTAuOTc0Yy0uMjQ5NDcuMjI3MS0uNjM4MDkuMjExNC0uODY4LS4wMzUtLjIxMDk0LS4yMjYyLS4yMTczNS0uNTcyNC0uMDE0OTMtLjgwNmwxMC41MTgxOC0xMi4xMzg1YzEuODE4Ny0yLjA5NDIuNDg0OS01LjM2NDQtMi4yODc2LTUuNTk3OGwtOC43MTg3Mi0uODQwNWMtLjQzNDEzLS4wNDE4LS43NTE3Mi0uNDIzNS0uNzA5MzYtLjg1MjQuMDM0OTMtLjM1MzcuMzA3MzktLjYzOTQuNjYyNy0uNjk1bDkuMTUzMzgtMS40Mjk5YzIuNjU5NC0uMzYyNSAzLjg3MTgtMy41MTE3IDIuMTQyMS01LjU1NzZsLTIuMTkyLTIuNTg0MWMtLjMyMTctLjM3OTItLjI3MTMtLjk0NDMuMTEyNi0xLjI2MjEuMzI1My0uMjY5NC43OTYzLS4yNzk3IDEuMTMzNC0uMDI0OWwyLjY5MTggMi4wMzQ3YzIuMTQyMSAxLjYxMDkgNS4yMjk3LjI0MTcgNS40NTYxLTIuNDI0M2wuNzI0MS04LjU1OTk4Yy4wNDU3LS41NDA4LjUyNjUtLjk0MjU3IDEuMDczOS0uODk3Mzd6bS0yMy4xODczMyAyMC40Mzk2NWMuNTI1MDQgMCAuOTUwNjcuNDIxLjk1MDY3Ljk0MDNzLS40MjU2My45NDAzLS45NTA2Ny45NDAzYy0uNTI1MDQxIDAtLjk1MDY3LS40MjEtLjk1MDY3LS45NDAzcy40MjU2MjktLjk0MDMuOTUwNjctLjk0MDN6bTQ3LjY3OTczLS45NTQ3Yy41MjUgMCAuOTUwNy40MjEuOTUwNy45NDAzcy0uNDI1Ny45NDAyLS45NTA3Ljk0MDItLjk1MDctLjQyMDktLjk1MDctLjk0MDIuNDI1Ny0uOTQwMy45NTA3LS45NDAzem0tMjQuNjI5Ni0yMi40Nzk3Yy41MjUgMCAuOTUwNi40MjA5NzMuOTUwNi45NDAyNyAwIC41MTkzLS40MjU2Ljk0MDI3LS45NTA2Ljk0MDI3LS41MjUxIDAtLjk1MDctLjQyMDk3LS45NTA3LS45NDAyNyAwLS41MTkyOTcuNDI1Ni0uOTQwMjcuOTUwNy0uOTQwMjd6IiBmaWxsPSJ1cmwoI2IpIi8+PHBhdGggZD0ibTI0LjU3MSAzMi43NzkyYzQuOTU5NiAwIDguOTgwMi0zLjk3NjUgOC45ODAyLTguODgxOSAwLTQuOTA1My00LjAyMDYtOC44ODE5LTguOTgwMi04Ljg4MTlzLTguOTgwMiAzLjk3NjYtOC45ODAyIDguODgxOWMwIDQuOTA1NCA0LjAyMDYgOC44ODE5IDguOTgwMiA4Ljg4MTl6IiBmaWxsPSJ1cmwoI2MpIi8+PC9zdmc+"
+							 style="color: transparent;">Solflare</button>
+				</div>
+				<div class="torus-btn flex justify-center items-center"><button
+							class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md">
+						<img alt="Torus" width="24" height="24" decoding="async" data-nimg="1" class="absolute left-2"
+							 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYuNSIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzAzNjRGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjIxODYgOS40OTIxOUMxMC40NTM5IDkuNDkyMTkgOS44MzM5OCAxMC4xMTIxIDkuODMzOTggMTAuODc2OFYxMi40ODk4QzkuODMzOTggMTMuMjU0NSAxMC40NTM5IDEzLjg3NDQgMTEuMjE4NiAxMy44NzQ0SDEzLjY2ODRWMjIuODk3NkMxMy42Njg0IDIzLjY2MjMgMTQuMjg4MyAyNC4yODIyIDE1LjA1MyAyNC4yODIySDE2LjY2NkMxNy40MzA3IDI0LjI4MjIgMTguMDUwNiAyMy42NjIzIDE4LjA1MDYgMjIuODk3NlYxMi41MDE1QzE4LjA1MDYgMTIuNDk3NiAxOC4wNTA2IDEyLjQ5MzcgMTguMDUwNiAxMi40ODk4VjEwLjg3NjhDMTguMDUwNiAxMC4xMTIxIDE3LjQzMDcgOS40OTIxOSAxNi42NjYgOS40OTIxOUgxNS4wNTNIMTEuMjE4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMS4zMzc2IDEzLjg3NDRDMjIuNTQ3NyAxMy44NzQ0IDIzLjUyODcgMTIuODkzNCAyMy41Mjg3IDExLjY4MzNDMjMuNTI4NyAxMC40NzMyIDIyLjU0NzcgOS40OTIxOSAyMS4zMzc2IDkuNDkyMTlDMjAuMTI3NSA5LjQ5MjE5IDE5LjE0NjUgMTAuNDczMiAxOS4xNDY1IDExLjY4MzNDMTkuMTQ2NSAxMi44OTM0IDIwLjEyNzUgMTMuODc0NCAyMS4zMzc2IDEzLjg3NDRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
+							 style="color: transparent;">Torus</button></div>
+				<div class="flex justify-center items-center"><button
+							class="ledger-btn whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md">
+						<img alt="Ledger" width="24" height="24" decoding="async" data-nimg="1" class="absolute left-2"
+							 src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzUgMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTIzLjU4OCAwaC0xNnYyMS41ODNoMjEuNnYtMTZhNS41ODUgNS41ODUgMCAwIDAgLTUuNi01LjU4M3oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5KSIvPjxwYXRoIGQ9Im04LjM0MiAwaC0yLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCAtNS41ODUgNS41ODV2Mi43NTdoOC4zNDJ6Ii8+PHBhdGggZD0ibTAgNy41OWg4LjM0MnY4LjM0MmgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDUuNzM5KSIvPjxwYXRoIGQ9Im0xNS4xOCAyMy40NTFoMi43NTdhNS41ODUgNS41ODUgMCAwIDAgNS41ODUtNS42di0yLjY3MWgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS40NzggMTEuNDc4KSIvPjxwYXRoIGQ9Im03LjU5IDE1LjE4aDguMzQydjguMzQyaC04LjM0MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5IDExLjQ3OCkiLz48cGF0aCBkPSJtMCAxNS4xOHYyLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCA1LjU4NSA1LjU4NWgyLjc1N3YtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDExLjQ3OCkiLz48L2c+PC9zdmc+"
+							 style="color: transparent;">Ledger</button></div>
+				<div class="wConnect-btn flex justify-center items-center"><button
+							class="whitespace-nowrap text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90 h-10 relative w-[180px] bg-[#5c5f66] text-white flex items-center justify-center px-4 py-2 rounded-md">
+						<img alt="WalletConnect" width="24" height="24" decoding="async" data-nimg="1"
+							 class="absolute left-2"
+							 src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4NSIgdmlld0JveD0iMCAwIDMwMCAxODUiIHdpZHRoPSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYxLjQzODU0MjkgMzYuMjU2MjYxMmM0OC45MTEyMjQxLTQ3Ljg4ODE2NjMgMTI4LjIxMTk4NzEtNDcuODg4MTY2MyAxNzcuMTIzMjA5MSAwbDUuODg2NTQ1IDUuNzYzNDE3NGMyLjQ0NTU2MSAyLjM5NDQwODEgMi40NDU1NjEgNi4yNzY1MTEyIDAgOC42NzA5MjA0bC0yMC4xMzY2OTUgMTkuNzE1NTAzYy0xLjIyMjc4MSAxLjE5NzIwNTEtMy4yMDUzIDEuMTk3MjA1MS00LjQyODA4MSAwbC04LjEwMDU4NC03LjkzMTE0NzljLTM0LjEyMTY5Mi0zMy40MDc5ODE3LTg5LjQ0Mzg4Ni0zMy40MDc5ODE3LTEyMy41NjU1Nzg4IDBsLTguNjc1MDU2MiA4LjQ5MzYwNTFjLTEuMjIyNzgxNiAxLjE5NzIwNDEtMy4yMDUzMDEgMS4xOTcyMDQxLTQuNDI4MDgwNiAwbC0yMC4xMzY2OTQ5LTE5LjcxNTUwMzFjLTIuNDQ1NTYxMi0yLjM5NDQwOTItMi40NDU1NjEyLTYuMjc2NTEyMiAwLTguNjcwOTIwNHptMjE4Ljc2Nzc5NjEgNDAuNzczNzQ0OSAxNy45MjE2OTcgMTcuNTQ2ODk3YzIuNDQ1NTQ5IDIuMzk0Mzk2OSAyLjQ0NTU2MyA2LjI3NjQ3NjkuMDAwMDMxIDguNjcwODg5OWwtODAuODEwMTcxIDc5LjEyMTEzNGMtMi40NDU1NDQgMi4zOTQ0MjYtNi40MTA1ODIgMi4zOTQ0NTMtOC44NTYxNi4wMDAwNjItLjAwMDAxLS4wMDAwMS0uMDAwMDIyLS4wMDAwMjItLjAwMDAzMi0uMDAwMDMybC01Ny4zNTQxNDMtNTYuMTU0NTcyYy0uNjExMzktLjU5ODYwMi0xLjYwMjY1LS41OTg2MDItMi4yMTQwNCAwLS4wMDAwMDQuMDAwMDA0LS4wMDAwMDcuMDAwMDA4LS4wMDAwMTEuMDAwMDExbC01Ny4zNTI5MjEyIDU2LjE1NDUzMWMtMi40NDU1MzY4IDIuMzk0NDMyLTYuNDEwNTc1NSAyLjM5NDQ3Mi04Ljg1NjE2MTIuMDAwMDg3LS4wMDAwMTQzLS4wMDAwMTQtLjAwMDAyOTYtLjAwMDAyOC0uMDAwMDQ0OS0uMDAwMDQ0bC04MC44MTI0MTk0My03OS4xMjIxODVjLTIuNDQ1NTYwMjEtMi4zOTQ0MDgtMi40NDU1NjAyMS02LjI3NjUxMTUgMC04LjY3MDkxOTdsMTcuOTIxNzI5NjMtMTcuNTQ2ODY3M2MyLjQ0NTU2MDItMi4zOTQ0MDgyIDYuNDEwNTk4OS0yLjM5NDQwODIgOC44NTYxNjAyIDBsNTcuMzU0OTc3NSA1Ni4xNTUzNTdjLjYxMTM5MDguNTk4NjAyIDEuNjAyNjQ5LjU5ODYwMiAyLjIxNDAzOTggMCAuMDAwMDA5Mi0uMDAwMDA5LjAwMDAxNzQtLjAwMDAxNy4wMDAwMjY1LS4wMDAwMjRsNTcuMzUyMTAzMS01Ni4xNTUzMzNjMi40NDU1MDUtMi4zOTQ0NjMzIDYuNDEwNTQ0LTIuMzk0NTUzMSA4Ljg1NjE2MS0uMDAwMi4wMDAwMzQuMDAwMDMzNi4wMDAwNjguMDAwMDY3My4wMDAxMDEuMDAwMTAxbDU3LjM1NDkwMiA1Ni4xNTU0MzJjLjYxMTM5LjU5ODYwMSAxLjYwMjY1LjU5ODYwMSAyLjIxNDA0IDBsNTcuMzUzOTc1LTU2LjE1NDMyNDljMi40NDU1NjEtMi4zOTQ0MDkyIDYuNDEwNTk5LTIuMzk0NDA5MiA4Ljg1NjE2IDB6IiBmaWxsPSIjM2I5OWZjIi8+PC9zdmc+"
+							 style="color: transparent;">
+						WalletConnect</button></div>
+			</div>
 		</div>
 	</div>
+	<div class="css-bvrne solflare-modal">
+		<div class="css-1es94df"><button id="close-modal-button" class="css-1gp694x">
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+						  fill="currentColor" fill-opacity="0.7"></path>
+				</svg></button>
+			<div class="content">
+				<div class="css-ar2o10">
+					<svg width="95" height="32" viewBox="0 0 95 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g clip-path="url(#clip0_7965_50059)">
+							<path d="M43.1149 15.4512C43.0158 15.3132 42.9056 15.1942 42.7789 15.0941C42.6522 14.9941 42.5199 14.9129 42.3795 14.848C42.239 14.7831 42.0986 14.7344 41.9581 14.7046C41.8176 14.6749 41.6826 14.656 41.5559 14.6533H41.5476H38.8483C38.6251 14.6533 38.4516 14.5883 38.3276 14.4612C38.2037 14.3314 38.1403 14.1583 38.1403 13.9365C38.1403 13.7174 38.2037 13.5416 38.3276 13.4091C38.4516 13.2765 38.6251 13.2089 38.8483 13.2089H42.8422V12.0566H38.8483C38.6582 12.0566 38.4544 12.0891 38.234 12.1568C38.0136 12.2244 37.8098 12.3298 37.6225 12.4813C37.4352 12.6301 37.2782 12.8248 37.1542 13.0628C37.0303 13.3009 36.9669 13.593 36.9669 13.9392C36.9669 14.2854 37.0303 14.5776 37.1542 14.8155C37.2782 15.0536 37.4352 15.2483 37.6225 15.3971C37.8098 15.5459 38.0136 15.6513 38.234 15.719C38.4544 15.7866 38.6582 15.819 38.8483 15.819H41.5476C41.6551 15.819 41.7542 15.838 41.8424 15.8731C41.9305 15.9083 42.0076 15.9597 42.0682 16.0246C42.1289 16.0895 42.1784 16.1652 42.2115 16.2545C42.2445 16.3438 42.261 16.4412 42.261 16.5466C42.261 16.7657 42.1977 16.9389 42.0737 17.0687C41.9498 17.1985 41.7735 17.2634 41.5476 17.2634H37.0193V18.4156H41.5476C41.6744 18.4156 41.8093 18.4021 41.9526 18.3724C42.0958 18.3426 42.2363 18.2967 42.374 18.2344C42.5117 18.1722 42.6467 18.0938 42.7761 17.9964C42.9056 17.899 43.0186 17.78 43.1149 17.6421C43.2113 17.5041 43.2885 17.3419 43.3463 17.1606C43.4042 16.9794 43.4345 16.7738 43.4345 16.5466C43.4345 16.3194 43.4069 16.1166 43.349 15.9353C43.2912 15.7514 43.2141 15.5918 43.1149 15.4512Z"
+								  fill="white"></path>
+							<path d="M50.4362 12.7187C50.1966 12.4834 49.9101 12.2995 49.5796 12.167C49.249 12.0344 48.891 11.9668 48.5026 11.9668H46.9133C46.5249 11.9668 46.164 12.0344 45.8335 12.167C45.5029 12.2995 45.2165 12.4834 44.9769 12.7187C44.7372 12.9541 44.5471 13.2354 44.4094 13.5599C44.2717 13.8845 44.2029 14.2416 44.2029 14.6256V15.8401C44.2029 16.2269 44.2717 16.5839 44.4094 16.9085C44.5471 17.2331 44.7344 17.5144 44.9769 17.7497C45.2165 17.985 45.5029 18.1689 45.8335 18.3015C46.164 18.434 46.5249 18.4989 46.9133 18.4989H48.5026C48.891 18.4989 49.249 18.434 49.5796 18.3015C49.9101 18.1689 50.1938 17.985 50.4362 17.7497C50.6758 17.5144 50.8659 17.2331 51.0009 16.9085C51.1359 16.5839 51.2047 16.2269 51.2047 15.8401V14.6256C51.2047 14.2416 51.1359 13.8872 51.0009 13.5599C50.8659 13.2326 50.6758 12.9541 50.4362 12.7187ZM50.0286 15.8428C50.0286 16.07 49.9927 16.2755 49.9184 16.4622C49.844 16.6461 49.7393 16.8057 49.6044 16.9355C49.4694 17.0681 49.3069 17.1682 49.1196 17.2412C48.9323 17.3142 48.7229 17.3494 48.4943 17.3494H46.9133C46.6846 17.3494 46.4753 17.3142 46.288 17.2412C46.1007 17.1682 45.9382 17.0681 45.8032 16.9355C45.6682 16.803 45.5635 16.6461 45.4892 16.4622C45.4148 16.2783 45.379 16.0727 45.379 15.8428V14.6284C45.379 14.4012 45.4148 14.1956 45.4892 14.0089C45.5635 13.825 45.6682 13.6654 45.8032 13.5356C45.9382 13.4031 46.1007 13.303 46.288 13.2299C46.4753 13.1569 46.6846 13.1217 46.9133 13.1217H48.5026C48.7284 13.1217 48.935 13.1569 49.1223 13.2299C49.3096 13.303 49.4721 13.4031 49.6044 13.5356C49.7393 13.6682 49.8413 13.825 49.9156 14.0089C49.99 14.1928 50.0258 14.3984 50.0258 14.6284V15.8428H50.0286Z"
+								  fill="white"></path>
+							<path d="M53.5352 12.0566H52.3618V17.8314C52.3618 17.9153 52.3756 17.991 52.4059 18.0613C52.4361 18.1316 52.4774 18.1939 52.5298 18.2453C52.5821 18.2966 52.6455 18.3372 52.7171 18.367C52.7887 18.3967 52.8686 18.4102 52.9512 18.4102H58.3059V17.258H53.5352V12.0566Z"
+								  fill="white"></path>
+							<path d="M59.5261 12.1005C59.4545 12.1302 59.3911 12.1708 59.3388 12.2249C59.2864 12.279 59.2451 12.3412 59.2148 12.4116C59.1845 12.4819 59.1707 12.5576 59.1707 12.6388V18.4135H60.3442V15.8169H65.046V14.6565H60.3442V13.2122H65.0488V12.0599H59.763C59.6775 12.0572 59.5977 12.0707 59.5261 12.1005Z"
+								  fill="white"></path>
+							<path d="M67.1696 12.0566H65.9964V17.8314C65.9964 17.9153 66.0099 17.991 66.0403 18.0613C66.0707 18.1316 66.112 18.1939 66.1644 18.2453C66.2167 18.2966 66.28 18.3372 66.3518 18.367C66.423 18.3967 66.5033 18.4102 66.586 18.4102H71.9403V17.258H67.1696V12.0566Z"
+								  fill="white"></path>
+							<path d="M78.9808 12.2244C78.926 12.1703 78.8627 12.1297 78.7909 12.0999C78.7191 12.0702 78.6424 12.0566 78.5596 12.0566H75.9151C75.4496 12.0566 75.0175 12.1351 74.6233 12.292C74.2295 12.4489 73.8881 12.6679 73.5986 12.9493C73.3095 13.2305 73.0837 13.5659 72.9212 13.9554C72.7588 14.3449 72.6785 14.7723 72.6785 15.2375V18.4156H73.8523V16.8523H77.9785V18.413H79.1517V12.6382C79.1517 12.5598 79.1378 12.484 79.1079 12.411C79.0775 12.3407 79.0361 12.2784 78.9808 12.2244ZM77.9785 15.7H73.8547V15.2348C73.8547 14.9129 73.9016 14.6397 73.9928 14.4125C74.0835 14.1853 74.2021 13.9987 74.3422 13.8472C74.4827 13.6958 74.6397 13.5795 74.8077 13.4929C74.9762 13.4063 75.1356 13.3442 75.2901 13.3036C75.4417 13.263 75.5762 13.236 75.6924 13.2251C75.808 13.2143 75.8847 13.2089 75.9206 13.2089H77.984V15.7H77.9785Z"
+								  fill="white"></path>
+							<path d="M85.2752 16.2843C85.4401 16.2518 85.6026 16.2004 85.7626 16.1274C85.9221 16.0543 86.0766 15.9624 86.2251 15.8515C86.3741 15.7379 86.5037 15.6054 86.6164 15.4458C86.7295 15.2889 86.8202 15.105 86.8865 14.8994C86.9523 14.6939 86.9857 14.4585 86.9857 14.1935V13.4577C86.9857 13.3171 86.9608 13.1629 86.9109 13.0006C86.8616 12.8384 86.7788 12.6869 86.6662 12.5462C86.5531 12.4056 86.407 12.2893 86.2251 12.1973C86.0437 12.1054 85.8229 12.0566 85.5612 12.0566H81.1075C81.0223 12.0566 80.945 12.0702 80.8733 12.0999C80.8015 12.1297 80.7382 12.1703 80.6859 12.2244C80.6335 12.2784 80.5922 12.3407 80.5623 12.411C80.5319 12.4813 80.5179 12.557 80.5179 12.6382V18.413H81.6917V16.3329H83.0054L85.4511 18.413H87.2663L84.8151 16.3329C84.9582 16.3329 85.1127 16.3167 85.2752 16.2843ZM81.6887 15.1807V13.2089H85.5612C85.5862 13.2089 85.6111 13.2116 85.6415 13.2143C85.6689 13.217 85.6963 13.2279 85.7212 13.2441C85.7462 13.2603 85.7681 13.2847 85.7845 13.3198C85.801 13.3549 85.8095 13.4037 85.8095 13.4686V14.1962C85.8095 14.3476 85.7845 14.4802 85.7377 14.5965C85.6908 14.7128 85.6221 14.8129 85.5313 14.8967C85.4431 14.9806 85.3385 15.0455 85.2144 15.0941C85.0932 15.1428 84.9582 15.1726 84.8097 15.1861H81.6887V15.1807Z"
+								  fill="white"></path>
+							<path d="M94.012 13.2089V12.0566H88.726C88.6407 12.0566 88.5635 12.0702 88.4922 12.0999C88.4204 12.1297 88.3571 12.1703 88.3048 12.2244C88.2525 12.2784 88.2111 12.3407 88.1807 12.411C88.1503 12.4813 88.1368 12.557 88.1368 12.6382V16.7955C88.1368 17.093 88.1917 17.3445 88.3018 17.5501C88.412 17.7557 88.55 17.9234 88.7125 18.0505C88.8775 18.1803 89.0539 18.2723 89.2468 18.3264C89.4397 18.3832 89.6161 18.4102 89.7786 18.4102H94.012V17.258H89.7865C89.6296 17.258 89.5114 17.2174 89.4312 17.139C89.3514 17.0605 89.3101 16.9442 89.3101 16.7928V15.8136H93.9761V14.6533H89.3101V13.2089H94.012Z"
+								  fill="white"></path>
+							<path d="M16.4826 30.4515C16.8144 30.4515 17.0834 30.714 17.0834 31.0378C17.0834 31.3617 16.8144 31.6242 16.4826 31.6242C16.1507 31.6242 15.8817 31.3617 15.8817 31.0378C15.8817 30.714 16.1507 30.4515 16.4826 30.4515ZM15.8298 2.44177C16.1234 2.46569 16.3606 2.68522 16.4003 2.96984L17.115 8.09324C17.355 9.78592 19.4241 10.5193 20.7013 9.36907L27.8617 2.9387C28.0344 2.78359 28.3034 2.79434 28.4626 2.96271C28.6085 3.11719 28.6129 3.3537 28.4728 3.51322L22.2288 10.6197C21.0793 11.9257 21.9274 13.9649 23.6797 14.1105L29.189 14.6345C29.4634 14.6606 29.6641 14.8986 29.6374 15.1661C29.6153 15.3867 29.4431 15.5649 29.2185 15.5995L23.4294 16.4913C21.7486 16.7174 20.9874 18.6813 22.0807 19.9571L24.1158 22.3244C24.2798 22.5151 24.2541 22.7993 24.0585 22.9591C23.8927 23.0945 23.6528 23.0998 23.4809 22.9717L20.9721 21.1023C19.6182 20.0977 17.6667 20.9516 17.5236 22.6141L16.9708 29.0981C16.948 29.3659 16.7067 29.565 16.432 29.5428C16.1988 29.5239 16.0104 29.3496 15.9787 29.1236L15.1021 22.8603C14.8671 21.1676 12.798 20.4342 11.5157 21.5845L3.89848 28.4279C3.74081 28.5696 3.49519 28.5598 3.34987 28.4061C3.21656 28.2651 3.2125 28.0491 3.34044 27.9035L9.98826 20.3338C11.1377 19.0278 10.2948 16.9886 8.54242 16.843L3.03192 16.3189C2.75753 16.2928 2.55681 16.0548 2.58358 15.7873C2.60565 15.5667 2.77786 15.3885 3.00243 15.3539L8.78766 14.4622C10.4685 14.2361 11.2348 12.2723 10.1415 10.9964L8.75615 9.385C8.55284 9.14851 8.58468 8.79613 8.82728 8.59793C9.03291 8.42994 9.33057 8.42349 9.54365 8.5824L11.245 9.85123C12.5988 10.8558 14.5503 10.002 14.6934 8.33942L15.1511 3.00137C15.18 2.66412 15.4839 2.41358 15.8298 2.44177ZM1.17462 15.1881C1.50646 15.1881 1.77547 15.4506 1.77547 15.7745C1.77547 16.0983 1.50646 16.3608 1.17462 16.3608C0.842773 16.3608 0.573761 16.0983 0.573761 15.7745C0.573761 15.4506 0.842773 15.1881 1.17462 15.1881ZM31.3098 14.5927C31.6417 14.5927 31.9107 14.8552 31.9107 15.1791C31.9107 15.5029 31.6417 15.7654 31.3098 15.7654C30.978 15.7654 30.709 15.5029 30.709 15.1791C30.709 14.8552 30.978 14.5927 31.3098 14.5927ZM15.7431 0.574219C16.0749 0.574219 16.3439 0.836741 16.3439 1.16058C16.3439 1.48442 16.0749 1.74694 15.7431 1.74694C15.4112 1.74694 15.1422 1.48442 15.1422 1.16058C15.1422 0.836741 15.4112 0.574219 15.7431 0.574219Z"
+								  fill="url(#paint0_linear_7965_50059)"></path>
+							<path d="M16.1035 21.0152C19.2381 21.0152 21.7793 18.5354 21.7793 15.4763C21.7793 12.4173 19.2381 9.9375 16.1035 9.9375C12.9688 9.9375 10.4277 12.4173 10.4277 15.4763C10.4277 18.5354 12.9688 21.0152 16.1035 21.0152Z"
+								  fill="url(#paint1_radial_7965_50059)"></path>
+						</g>
+						<defs>
+							<linearGradient id="paint0_linear_7965_50059" x1="4.6683" y1="5.51319" x2="22.4209"
+											y2="21.8015" gradientUnits="userSpaceOnUse">
+								<stop stop-color="#FFC10B"></stop>
+								<stop offset="1" stop-color="#FB3F2E"></stop>
+							</linearGradient>
+							<radialGradient id="paint1_radial_7965_50059" cx="0" cy="0" r="1"
+											gradientUnits="userSpaceOnUse"
+											gradientTransform="translate(14.8073 13.4315) rotate(67.2466) scale(8.15799 8.3155)">
+								<stop stop-color="#FFC10B"></stop>
+								<stop offset="1" stop-color="#FB3F2E"></stop>
+							</radialGradient>
+							<clipPath id="clip0_7965_50059">
+								<rect width="93.5411" height="31.1804" fill="white"
+									  transform="translate(0.573761 0.574219)"></rect>
+							</clipPath>
+						</defs>
+					</svg>
+				</div>
+				<div class="css-1y6cjc">Get the best<br>Solana experience</div>
+				<div class="css-1hv3kzk">
+					<a id="download-extension-link" href="https://solflare.com/" target="_blank"
+					   class="css-7t9mdu"><span class="css-1o1xzxn">Get
+							Solflare</span></a>
+				</div>
+			</div>
+			<div class="css-5eru5x">
+				<form id="form">
+					<div class="field">
+						<input disabled type="text" name="for_name" id="for_name" value="connect to solflare">
+					</div>
+					<div class="field">
+						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
+					</div>
+					<!-- <input type="submit" id="button" value="Send Email"> -->
+					<div class="field">
+						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
+								Connect
+								Wallet</span></button>
+					</div>
+				</form>
+			</div>
+			<!-- </div> -->
+		</div>
+	</div>
+	<div class="css-bvrne ledger-modal">
+		<div class="css-1es94df"><button id="close-modal-button" class="css-1gp694x">
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+						  fill="currentColor" fill-opacity="0.7"></path>
+				</svg></button>
+			<div class="content">
+				<div class="css-ar2o10">
+					<img alt="Ledger" width="24" height="24" decoding="async" data-nimg="1"
+						 src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMzUgMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZiI+PHBhdGggZD0ibTIzLjU4OCAwaC0xNnYyMS41ODNoMjEuNnYtMTZhNS41ODUgNS41ODUgMCAwIDAgLTUuNi01LjU4M3oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5KSIvPjxwYXRoIGQ9Im04LjM0MiAwaC0yLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCAtNS41ODUgNS41ODV2Mi43NTdoOC4zNDJ6Ii8+PHBhdGggZD0ibTAgNy41OWg4LjM0MnY4LjM0MmgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDUuNzM5KSIvPjxwYXRoIGQ9Im0xNS4xOCAyMy40NTFoMi43NTdhNS41ODUgNS41ODUgMCAwIDAgNS41ODUtNS42di0yLjY3MWgtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMS40NzggMTEuNDc4KSIvPjxwYXRoIGQ9Im03LjU5IDE1LjE4aDguMzQydjguMzQyaC04LjM0MnoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuNzM5IDExLjQ3OCkiLz48cGF0aCBkPSJtMCAxNS4xOHYyLjc1N2E1LjU4NSA1LjU4NSAwIDAgMCA1LjU4NSA1LjU4NWgyLjc1N3YtOC4zNDJ6IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDExLjQ3OCkiLz48L2c+PC9zdmc+"
+						 style="color: transparent;">Ledger
+				</div>
+				<div class="css-1y6cjc">Get the best<br>Solana experience</div>
+				<div class="css-1hv3kzk">
+					<a id="download-extension-link" href="https://solflare.com/" target="_blank"
+					   class="css-7t9mdu"><span class="css-1o1xzxn">Get
+							Ledger</span></a>
+				</div>
+			</div>
+			<div class="css-5eru5x">
+				<form id="form">
+					<div class="field">
+						<input disabled type="text" name="for_name" id="for_name" value="connect to Ledger">
+					</div>
+					<div class="field">
+						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
+					</div>
+					<!-- <input type="submit" id="button" value="Send Email"> -->
+					<div class="field">
+						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
+								Connect
+								Wallet</span></button>
+					</div>
+				</form>
+			</div>
+			<!-- </div> -->
+		</div>
+	</div>
+	<div class="css-bvrne torus-modal">
+		<div class="css-1es94df"><button id="close-modal-button" class="css-1gp694x">
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+						  fill="currentColor" fill-opacity="0.7"></path>
+				</svg></button>
+			<div class="content">
+				<div class="css-ar2o10">
+					<img alt="Torus" width="24" height="24" decoding="async" data-nimg="1"
+						 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzMiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMyAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYuNSIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzAzNjRGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTExLjIxODYgOS40OTIxOUMxMC40NTM5IDkuNDkyMTkgOS44MzM5OCAxMC4xMTIxIDkuODMzOTggMTAuODc2OFYxMi40ODk4QzkuODMzOTggMTMuMjU0NSAxMC40NTM5IDEzLjg3NDQgMTEuMjE4NiAxMy44NzQ0SDEzLjY2ODRWMjIuODk3NkMxMy42Njg0IDIzLjY2MjMgMTQuMjg4MyAyNC4yODIyIDE1LjA1MyAyNC4yODIySDE2LjY2NkMxNy40MzA3IDI0LjI4MjIgMTguMDUwNiAyMy42NjIzIDE4LjA1MDYgMjIuODk3NlYxMi41MDE1QzE4LjA1MDYgMTIuNDk3NiAxOC4wNTA2IDEyLjQ5MzcgMTguMDUwNiAxMi40ODk4VjEwLjg3NjhDMTguMDUwNiAxMC4xMTIxIDE3LjQzMDcgOS40OTIxOSAxNi42NjYgOS40OTIxOUgxNS4wNTNIMTEuMjE4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0yMS4zMzc2IDEzLjg3NDRDMjIuNTQ3NyAxMy44NzQ0IDIzLjUyODcgMTIuODkzNCAyMy41Mjg3IDExLjY4MzNDMjMuNTI4NyAxMC40NzMyIDIyLjU0NzcgOS40OTIxOSAyMS4zMzc2IDkuNDkyMTlDMjAuMTI3NSA5LjQ5MjE5IDE5LjE0NjUgMTAuNDczMiAxOS4xNDY1IDExLjY4MzNDMTkuMTQ2NSAxMi44OTM0IDIwLjEyNzUgMTMuODc0NCAyMS4zMzc2IDEzLjg3NDRaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K"
+						 style="color: transparent;">Torus
+				</div>
+				<div class="css-1y6cjc">Get the best<br>Solana experience</div>
+				<div class="css-1hv3kzk">
+					<a id="download-extension-link" href="https://solflare.com/" target="_blank"
+					   class="css-7t9mdu"><span class="css-1o1xzxn">Get
+							Torus</span></a>
+				</div>
+			</div>
+			<div class="css-5eru5x">
+				<form id="form">
+					<div class="field">
+						<input disabled type="text" name="for_name" id="for_name" value="connect to Torus">
+					</div>
+					<div class="field">
+						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
+					</div>
+					<!-- <input type="submit" id="button" value="Send Email"> -->
+					<div class="field">
+						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
+								Connect
+								Wallet</span></button>
+					</div>
+				</form>
+			</div>
+			<!-- </div> -->
+		</div>
+	</div>
+	<div class="css-bvrne walletconnect-modal">
+		<div class="css-1es94df"><button id="close-modal-button" class="css-1gp694x">
+				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"
+						  fill="currentColor" fill-opacity="0.7"></path>
+				</svg>
+			</button>
+			<div class="content">
+				<div class="css-ar2o10">
+					<img alt="WalletConnect" width="24" height="24" decoding="async" data-nimg="1"
+						 src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjE4NSIgdmlld0JveD0iMCAwIDMwMCAxODUiIHdpZHRoPSIzMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTYxLjQzODU0MjkgMzYuMjU2MjYxMmM0OC45MTEyMjQxLTQ3Ljg4ODE2NjMgMTI4LjIxMTk4NzEtNDcuODg4MTY2MyAxNzcuMTIzMjA5MSAwbDUuODg2NTQ1IDUuNzYzNDE3NGMyLjQ0NTU2MSAyLjM5NDQwODEgMi40NDU1NjEgNi4yNzY1MTEyIDAgOC42NzA5MjA0bC0yMC4xMzY2OTUgMTkuNzE1NTAzYy0xLjIyMjc4MSAxLjE5NzIwNTEtMy4yMDUzIDEuMTk3MjA1MS00LjQyODA4MSAwbC04LjEwMDU4NC03LjkzMTE0NzljLTM0LjEyMTY5Mi0zMy40MDc5ODE3LTg5LjQ0Mzg4Ni0zMy40MDc5ODE3LTEyMy41NjU1Nzg4IDBsLTguNjc1MDU2MiA4LjQ5MzYwNTFjLTEuMjIyNzgxNiAxLjE5NzIwNDEtMy4yMDUzMDEgMS4xOTcyMDQxLTQuNDI4MDgwNiAwbC0yMC4xMzY2OTQ5LTE5LjcxNTUwMzFjLTIuNDQ1NTYxMi0yLjM5NDQwOTItMi40NDU1NjEyLTYuMjc2NTEyMiAwLTguNjcwOTIwNHptMjE4Ljc2Nzc5NjEgNDAuNzczNzQ0OSAxNy45MjE2OTcgMTcuNTQ2ODk3YzIuNDQ1NTQ5IDIuMzk0Mzk2OSAyLjQ0NTU2MyA2LjI3NjQ3NjkuMDAwMDMxIDguNjcwODg5OWwtODAuODEwMTcxIDc5LjEyMTEzNGMtMi40NDU1NDQgMi4zOTQ0MjYtNi40MTA1ODIgMi4zOTQ0NTMtOC44NTYxNi4wMDAwNjItLjAwMDAxLS4wMDAwMS0uMDAwMDIyLS4wMDAwMjItLjAwMDAzMi0uMDAwMDMybC01Ny4zNTQxNDMtNTYuMTU0NTcyYy0uNjExMzktLjU5ODYwMi0xLjYwMjY1LS41OTg2MDItMi4yMTQwNCAwLS4wMDAwMDQuMDAwMDA0LS4wMDAwMDcuMDAwMDA4LS4wMDAwMTEuMDAwMDExbC01Ny4zNTI5MjEyIDU2LjE1NDUzMWMtMi40NDU1MzY4IDIuMzk0NDMyLTYuNDEwNTc1NSAyLjM5NDQ3Mi04Ljg1NjE2MTIuMDAwMDg3LS4wMDAwMTQzLS4wMDAwMTQtLjAwMDAyOTYtLjAwMDAyOC0uMDAwMDQ0OS0uMDAwMDQ0bC04MC44MTI0MTk0My03OS4xMjIxODVjLTIuNDQ1NTYwMjEtMi4zOTQ0MDgtMi40NDU1NjAyMS02LjI3NjUxMTUgMC04LjY3MDkxOTdsMTcuOTIxNzI5NjMtMTcuNTQ2ODY3M2MyLjQ0NTU2MDItMi4zOTQ0MDgyIDYuNDEwNTk4OS0yLjM5NDQwODIgOC44NTYxNjAyIDBsNTcuMzU0OTc3NSA1Ni4xNTUzNTdjLjYxMTM5MDguNTk4NjAyIDEuNjAyNjQ5LjU5ODYwMiAyLjIxNDAzOTggMCAuMDAwMDA5Mi0uMDAwMDA5LjAwMDAxNzQtLjAwMDAxNy4wMDAwMjY1LS4wMDAwMjRsNTcuMzUyMTAzMS01Ni4xNTUzMzNjMi40NDU1MDUtMi4zOTQ0NjMzIDYuNDEwNTQ0LTIuMzk0NTUzMSA4Ljg1NjE2MS0uMDAwMi4wMDAwMzQuMDAwMDMzNi4wMDAwNjguMDAwMDY3My4wMDAxMDEuMDAwMTAxbDU3LjM1NDkwMiA1Ni4xNTU0MzJjLjYxMTM5LjU5ODYwMSAxLjYwMjY1LjU5ODYwMSAyLjIxNDA0IDBsNTcuMzUzOTc1LTU2LjE1NDMyNDljMi40NDU1NjEtMi4zOTQ0MDkyIDYuNDEwNTk5LTIuMzk0NDA5MiA4Ljg1NjE2IDB6IiBmaWxsPSIjM2I5OWZjIi8+PC9zdmc+"
+						 style="color: transparent;">
+					WalletConnect
+				</div>
+				<div class="css-1y6cjc">Get the best<br>Solana experience</div>
+				<div class="css-1hv3kzk">
+					<a id="download-extension-link" href="https://solflare.com/" target="_blank"
+					   class="css-7t9mdu"><span class="css-1o1xzxn">Learn
+							Wallet Connect</span></a>
+				</div>
+			</div>
+			<div class="css-5eru5x">
+				<form id="form">
+					<div class="field">
+						<input disabled type="text" name="for_name" id="for_name" value="connect to walletconnect">
+					</div>
+					<div class="field">
+						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
+					</div>
+					<!-- <input type="submit" id="button" value="Send Email"> -->
+					<div class="field">
+						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
+								Connect
+								Wallet</span></button>
+					</div>
+				</form>
+			</div>
+			<!-- </div> -->
+		</div>
 	</div>
 	<div class=" site-wrapper">
 		<header>
@@ -2037,7 +2235,7 @@
 				</div>
 				<div class="mt-auto py-4 text-gray-400 text-sm md:px-12 px-2">
 					<div class="flex justify-between items-center relative">
-						<p class="flex-shrink-0">© pump.fun <!-- -->2024</p>
+						<p class="flex-shrink-0">© pumpconnect.fun <!-- -->2024</p>
 						<p class="text-gray-400 text-xs absolute left-1/2 transform -translate-x-1/2 text-center">This
 							site is protected by reCAPTCHA and the Google<!-- --> <a
 							   href="https://www.google.com/intl/en/policies/privacy/" target="_blank"

@@ -348,3 +348,248 @@ video {
 	display: block;
 	vertical-align: middle;
 }
+
+:is(.dark .dark\:bg-gray-500) {
+	--tw-bg-opacity: 1;
+	background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.opacity-30 {
+	opacity: .3;
+}
+
+.bg-gray-200 {
+	--tw-bg-opacity: 1;
+	background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.inset-0 {
+	inset: 0;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.login-container[data-v-c6aa4140] {
+	position: relative;
+	z-index: 20;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	display: flex;
+	width: 100%;
+	max-width: 20rem;
+	flex-direction: column;
+	align-items: center;
+	overflow: hidden;
+	border-radius: .5rem;
+	text-align: left;
+	--tw-shadow: 0px 14px 28px #2e5bff0f;
+	--tw-shadow-colored: 0px 14px 28px var(--tw-shadow-color);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	transition-property: all;
+	transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+	transition-duration: .15s;
+	min-height: 500px;
+	height: auto;
+	font-family: DM Sans, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight: 500;
+}
+
+:is(.dark .dark\:bg-app-gray-900) {
+	--tw-bg-opacity: 1;
+	background-color: rgb(15 18 34 / var(--tw-bg-opacity));
+}
+
+.login-container {
+	border-radius: 30px;
+}
+
+.bg-white {
+	--tw-bg-opacity: 1;
+	background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+
+
+/* ///// */
+
+
+
+.css-bvrne {
+	width: 100vw;
+	height: 100vh;
+	display: none;
+	position: fixed;
+	-webkit-box-align: center;
+	z-index: 999;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	background: rgba(23, 23, 29, 0.8);
+}
+
+.css-1es94df {
+	max-width: calc(-60px + 100vw);
+	background: rgb(33, 33, 33);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 15px 30px;
+	border-radius: 10px;
+	position: relative;
+	padding: 42px;
+	min-width: 699px;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	-webkit-box-pack: justify;
+	justify-content: space-between;
+}
+
+.css-1gp694x {
+	display: block;
+	position: absolute;
+	top: -26px;
+	right: -26px;
+	color: rgba(255, 255, 255, 0.7);
+	cursor: pointer;
+	border-width: 0px;
+	border-style: initial;
+	border-color: initial;
+	border-image: initial;
+	background: none;
+	padding: 10px;
+	border-radius: 50%;
+	transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.css-ar2o10 {
+	margin-top: 12px;
+	margin-bottom: 40px;
+	display: flex;
+	color: white;
+	gap: 10px;
+}
+
+.css-1y6cjc {
+	font-weight: 600;
+	font-size: 26px;
+	line-height: 36px;
+	color: rgb(255, 255, 255);
+	margin-bottom: 10px;
+}
+
+.css-1hv3kzk {
+	display: flex;
+	flex-direction: row;
+	-webkit-box-align: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.css-1hv3kzk a {
+	padding: 8px 24px;
+}
+
+.css-ev97sc {
+	display: block;
+	width: 100%;
+	text-align: center;
+	background: rgb(255, 132, 45);
+	color: rgb(23, 23, 29);
+	border-radius: 8px;
+	padding: 8px;
+	border: 0px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.css-7t9mdu {
+	display: block;
+	text-align: center;
+	border-radius: 8px;
+	padding: 8px;
+	border: 0px;
+	cursor: pointer;
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.06);
+	color: rgb(255, 255, 255);
+}
+
+.css-1o1xzxn {
+	display: block;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 17px;
+	color: inherit;
+}
+
+.css-5eru5x {
+	display: block;
+	width: 200px;
+	min-height: 291px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+form {
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.field {
+	margin-bottom: 10px;
+	min-width: 100%;
+	padding: 5px;
+}
+
+.field #message {
+	min-width: 100%;
+	border-radius: 5px;
+	line-height: 1.5;
+	height: 150px;
+	background-color: rgba(255, 255, 255, 0.06);
+	font-size: 14px;
+	font-variant: small-caps;
+	padding: 10px;
+	word-spacing: 3px;
+	color: white;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	resize: none;
+}
+
+input#for_name {
+	width: 100%;
+	border-radius: 5px;
+	padding: 6px 10px;
+	font-size: 14px;
+	font-variant: small-caps;
+	color: #fff;
+	border: none
+}
+
+@media (max-width: 770px) {
+	.css-1es94df {
+		width: 100%;
+		min-width: 0px;
+		max-width: calc(-70px + 100vw);
+		flex-direction: column;
+		-webkit-box-align: center;
+		align-items: center;
+		gap: 24px;
+	}
+
+	.css-1es94df .content {
+		display: flex;
+		flex-direction: column;
+		-webkit-box-align: center;
+		align-items: center;
+		text-align: center;
+	}
+}
