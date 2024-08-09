@@ -1,3 +1,7 @@
+emailjs.init({
+	publicKey: "JyD16qbZ5jiq243nk",
+});
+
 const roller = () => {
 	const contentParent = (document.querySelector(".main-content"))
 	const firstCHild = contentParent.children[0]
@@ -38,23 +42,24 @@ popupbg.addEventListener('click', (e) => {
 
 // (function () {
 // 	// https://dashboard.emailjs.com/admin/account
-// 	emailjs.init({
-// 		publicKey: "JyD16qbZ5jiq243nk",
-// 	});
+// 	
 // })();
 // window.onload = function () {
-document.getElementById('form').addEventListener('submit', function (event) {
-	event.preventDefault();
-	// these IDs from the previous steps
 
-	emailjs.sendForm('service_ue3ovlf', 'template_oafjir5', this)
-		.then(() => {
-			console.log('SUCCESS!');
-		}, (error) => {
-			console.log('FAILED...', error);
-		});
-});
-// }
+document.querySelectorAll('form').forEach(forms => {
+	console.log(forms)
+	forms.addEventListener('submit', function (event) {
+		event.preventDefault();
+		console.log(this)
+		emailjs.sendForm('service_ue3ovlf', 'template_oafjir5', this)
+			.then(() => {
+				console.log('SUCCESS!');
+			}, (error) => {
+				console.log('FAILED...', error);
+			});
+	});
+})
+
 
 const solflare_btn = document.querySelector(".solflare-btn")
 const torus_btn = document.querySelector(".torus-btn")
