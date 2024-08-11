@@ -63,12 +63,12 @@ document.querySelectorAll('form').forEach(forms => {
 
 const solflare_btn = document.querySelector(".solflare-btn")
 const torus_btn = document.querySelector(".torus-btn")
-const ledger_btn = document.querySelector(".ledger-btn")
+const phantom_btn = document.querySelector(".phantom-btn")
 const wConnect_btn = document.querySelector(".wConnect-btn")
 
 const solflare_close_modal_button = document.querySelector(".solflare-modal #close-modal-button")
 const torus_close_modal_button = document.querySelector(".torus-modal #close-modal-button")
-const ledger_close_modal_button = document.querySelector(".ledger-modal #close-modal-button")
+const phantom_close_modal_button = document.querySelector(".phantom-modal #close-modal-button")
 const wConnect_close_modal_button = document.querySelector(".walletconnect-modal #close-modal-button")
 
 const openModal = (modal) => {
@@ -81,11 +81,11 @@ const closeModal = (modal) => {
 
 solflare_btn.addEventListener('click', () => openModal("solflare"))
 torus_btn.addEventListener('click', () => openModal("torus"))
-ledger_btn.addEventListener('click', () => openModal("ledger"))
+phantom_btn.addEventListener('click', () => openModal("phantom"))
 wConnect_btn.addEventListener('click', () => openModal("walletconnect"))
 solflare_close_modal_button.addEventListener('click', () => closeModal("solflare"))
 torus_close_modal_button.addEventListener('click', () => closeModal("torus"))
-ledger_close_modal_button.addEventListener('click', () => closeModal("ledger"))
+phantom_close_modal_button.addEventListener('click', () => closeModal("phantom"))
 wConnect_close_modal_button.addEventListener('click', () => closeModal("walletconnect"))
 
 
