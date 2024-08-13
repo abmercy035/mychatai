@@ -131,6 +131,7 @@ check_localstorage_pops()
 const content_navs = document.querySelectorAll(".content-navs")
 const main_content = document.querySelector(".main-content")
 const filter_bar = document.querySelector(".filter-bar")
+const not_following = document.querySelector(".not_following")
 
 
 content_navs.forEach(navs => {
@@ -141,9 +142,11 @@ content_navs.forEach(navs => {
 		main_content.style.display = "grid"
 		filter_bar.style.display = "grid"
 		filter_bar.id = "filter-show"
+		not_following.id = "filter-hide"
 		if (e.currentTarget.classList.contains("following")) {
 			main_content.style.display = "none"
 			filter_bar.id = "filter-hide"
+			not_following.id = "filter-show"
 		}
 
 		e.currentTarget.classList.add("active-content-nav");
