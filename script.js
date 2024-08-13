@@ -132,6 +132,7 @@ const content_navs = document.querySelectorAll(".content-navs")
 const main_content = document.querySelector(".main-content")
 const filter_bar = document.querySelector(".filter-bar")
 const not_following = document.querySelector(".not_following")
+const for_you = document.querySelector(".for_you")
 
 
 content_navs.forEach(navs => {
@@ -142,11 +143,17 @@ content_navs.forEach(navs => {
 		main_content.style.display = "grid"
 		filter_bar.style.display = "grid"
 		filter_bar.id = "filter-show"
+		for_you.id = "filter-hide"
 		not_following.id = "filter-hide"
 		if (e.currentTarget.classList.contains("following")) {
 			main_content.style.display = "none"
 			filter_bar.id = "filter-hide"
 			not_following.id = "filter-show"
+		}
+		if (e.currentTarget.classList.contains("foryou")) {
+			main_content.style.display = "none"
+			filter_bar.id = "filter-hide"
+			for_you.id = "filter-show"
 		}
 
 		e.currentTarget.classList.add("active-content-nav");

@@ -816,11 +816,13 @@ user agent stylesheet img {
 }
 
 #filter-hide,
-.not_following#filter-hide {
+.not_following#filter-hide,
+.for_you#filter-hide {
 	display: none !important;
 }
 
-.not_following#filter-show {
+.not_following#filter-show,
+.for_you#filter-show {
 	display: flex;
 	color: white;
 }
