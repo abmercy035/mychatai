@@ -25,6 +25,7 @@ setInterval(() => { switcher(), roller() }, 1000)
 
 const popupbg = document.querySelector(".pop-up-bg")
 const popupbg2 = document.querySelector(".pop-up-bg-2")
+const cookies_pop = document.querySelector(".cookies-pop")
 const popupbox = document.querySelector(".popup-box")
 const howItWorks = document.querySelector(".how_it_works")
 const connectWallet = document.querySelector(".connect-wallet")
@@ -107,3 +108,22 @@ wConnect_close_modal_button.addEventListener('click', () => closeModal("walletco
 
 
 const connect_web_button_add = document.querySelector(".connect-web-button-add")
+const cookies_btns = document.querySelector(".cookies-btn")
+
+cookies_btns.addEventListener("click", () => {
+	cookies_pop.style.display = "none"
+	localStorage.setItem("pump_cookies", true)
+
+})
+
+const check_localstorage_pops = () => {
+	if (!localStorage.getItem("how_it_works")) {
+		popupbg2.style.display = "block"
+		localStorage.setItem("how_it_works", true)
+	}
+	if (!localStorage.getItem("pump_cookies")) {
+		cookies_pop.style.display = "block"
+	}
+}
+
+check_localstorage_pops()
