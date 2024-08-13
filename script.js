@@ -108,12 +108,14 @@ wConnect_close_modal_button.addEventListener('click', () => closeModal("walletco
 
 
 const connect_web_button_add = document.querySelector(".connect-web-button-add")
-const cookies_btns = document.querySelector(".cookies-btn")
+const cookies_btns = document.querySelectorAll(".cookies-btn")
 
-cookies_btns.addEventListener("click", () => {
-	cookies_pop.style.display = "none"
-	localStorage.setItem("pump_cookies", true)
+cookies_btns.forEach(btns => {
+	btns.addEventListener("click", () => {
+		cookies_pop.style.display = "none"
+		localStorage.setItem("pump_cookies", true)
 
+	})
 })
 
 const check_localstorage_pops = () => {
