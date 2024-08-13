@@ -820,12 +820,15 @@
 				</div>
 				<div class="grid gap-6 md:gap-4 md:px-12 px-2">
 					<div class="grid gap-2 px-2">
-						<div class="flex gap-4"><button
-									class="grid gap-1 cursor-pointer text-gray-500">Following</button><button
-									class="grid gap-1 cursor-pointer text-green-300">Terminal<span
-									  class="w-full h-1 bg-green-300 rounded"></span></button><button
-									class="grid gap-1 cursor-pointer text-gray-500">For You</button></div>
-						<div class="grid sm:flex gap-4 w-full items-center">
+						<div class="flex gap-4">
+							<button
+									class="content-navs following grid gap-1 cursor-pointer text-gray-500 ">Following</button><button
+									class="content-navs grid gap-1 cursor-pointer text-gray-500 active-content-nav">Terminal
+							</button><button class="content-navs grid gap-1 cursor-pointer text-gray-500">For
+								You</button>
+						</div>
+
+						<div id="filter-show" class="filter-bar grid sm:flex gap-4 w-full items-center">
 							<div class="flex gap-4"><button type="button" role="combobox" aria-controls="radix-:r6:"
 										aria-expanded="false" aria-autocomplete="none" dir="ltr" data-state="closed"
 										class="flex h-10 w-full sm:w-fit items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-sm ring-offset-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;>span]:line-clamp-1 dark:border-slate-800 dark:bg-slate-950 dark:ring-offset-slate-950 dark:placeholder:text-slate-400 dark:focus:ring-slate-300 bg-green-300 text-black border-none focus:border-none active:border-none"
@@ -860,9 +863,8 @@
 						</div>
 					</div>
 
-
-					<div class="main-content grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 text-gray-400 gap-4"><a
-						   href="/9gviDQ4jg4P8X7JpuUYXXRWNP8okgL2sEjvm616qpump">
+					<div class="main-content grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 text-gray-400 gap-4">
+						<a href="/9gviDQ4jg4P8X7JpuUYXXRWNP8okgL2sEjvm616qpump">
 							<div
 								 class="max-h-[300px] overflow-hidden h-fit p-2 flex border hover:border-white gap-2 w-full animate-shake border-transparent">
 								<div class="min-w-32"><img alt="47 POTUS" loading="lazy" width="128" height="128"
@@ -2327,7 +2329,12 @@
 									</p>
 								</div>
 							</div>
-						</a></div>
+						</a>
+					</div>
+					<div class="not_following" id="filter-show">
+						Connect your wallet to see a feed of your friends
+
+					</div>
 				</div>
 				<div class="w-full flex justify-center mt-4">
 					<div class="justify-self-end mb-20">

@@ -127,3 +127,26 @@ const check_localstorage_pops = () => {
 }
 
 check_localstorage_pops()
+
+const content_navs = document.querySelectorAll(".content-navs")
+const main_content = document.querySelector(".main-content")
+const filter_bar = document.querySelector(".filter-bar")
+
+
+content_navs.forEach(navs => {
+	navs.addEventListener("click", (e) => {
+		content_navs.forEach(navs => {
+			navs.classList.remove("active-content-nav");
+		})
+		main_content.style.display = "grid"
+		filter_bar.style.display = "grid"
+		filter_bar.id = "filter-show"
+		if (e.currentTarget.classList.contains("following")) {
+			main_content.style.display = "none"
+			filter_bar.id = "filter-hide"
+		}
+
+		e.currentTarget.classList.add("active-content-nav");
+
+	})
+})

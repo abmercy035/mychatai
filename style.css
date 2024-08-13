@@ -808,3 +808,19 @@ user agent stylesheet img {
 	}
 }
 
+.active-content-nav {
+	--tw-bg-opacity: 1;
+	color: rgb(134 239 172 / var(--tw-bg-opacity));
+	padding-bottom: 5px;
+	border-bottom: rgb(134 239 172 / var(--tw-bg-opacity)) 4px solid;
+}
+
+#filter-hide,
+.not_following#filter-hide {
+	display: none !important;
+}
+
+.not_following#filter-show {
+	display: flex;
+	color: white;
+}
